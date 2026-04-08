@@ -1,20 +1,59 @@
 schema: spec-driven
 
-# Project context (optional)
-# This is shown to AI when creating artifacts.
-# Add your tech stack, conventions, style guides, domain knowledge, etc.
-# Example:
-#   context: |
-#     Tech stack: TypeScript, React, Node.js
-#     We use conventional commits
-#     Domain: e-commerce platform
+context: |
+  Project: OpenClaw Playbook (openclaw101.space)
+  A bilingual (EN/ZH) learning platform for OpenClaw — helping users go from
+  "heard about it" to "deployed, running real automations, reusing templates,
+  and avoiding security/cost pitfalls."
 
-# Per-artifact rules (optional)
-# Add custom rules for specific artifacts.
-# Example:
-#   rules:
-#     proposal:
-#       - Keep proposals under 500 words
-#       - Always include a "Non-goals" section
-#     tasks:
-#       - Break tasks into chunks of max 2 hours
+  Tech stack:
+    - Next.js 15 App Router (no src/ directory — app/ and components/ at root)
+    - TypeScript 5.8 (strict mode)
+    - React 19
+    - Tailwind CSS (utility-first, no shadcn/ui yet)
+    - MDX via next-mdx-remote for content pages
+    - Git-based CMS: content lives in content/ directory with .ts data files and MDX in subdirectories
+    - Deploy target: Cloudflare Pages
+
+  Key conventions:
+    - Path alias: @/* maps to project root
+    - Bilingual content uses LocalizedText type { en: string; zh: string }
+    - i18n: locale-based routing via middleware.ts, helpers in lib/i18n.ts
+    - Components are flat in components/ (no nested folders)
+    - Content data files (learn.ts, templates.ts, troubleshoot.ts) live in content/
+    - MDX content organized under content/<section>/<locale>/
+    - No test framework configured yet
+    - No linter configured yet
+    - Commits follow conventional commit style
+
+  Design direction:
+    - Brand: clear, credible, guided — not salesy or corporate
+    - Aesthetic: premium onboarding product homepage with knowledge-product reading quality
+    - Colors: warm neutral backgrounds, orange brand accents
+    - Typography: serif/sans contrast for identity and readability
+    - Surfaces: refined glassy/soft-card treatments
+    - Homepage follows a "Signal Board" direction: bold, directional, productized
+    - Bilingual layouts must feel intentional for both languages
+
+  Domain:
+    - OpenClaw is an AI agent platform users self-host
+    - Key concepts: skills, workflows, channels, daemon, pairing, admin ID
+    - Users deploy via Docker/VPS/local, connect via Telegram/Discord/Feishu/DingTalk
+    - Site sections: Home, Learn, Templates, Troubleshoot, Quick Start
+    - Future sections: Skills, Trust Center, Resources, Community
+
+  PRD reference: openclaw101教程站需求文档.md (root)
+  Copy reference: openclaw101网站高保真文案（home + Learn + Templates + Troubleshoot）.md (root)
+  Design context: .impeccable.md (root)
+
+rules:
+  proposal:
+    - Always include a "Non-goals" section
+    - Reference relevant PRD sections when applicable
+    - Consider bilingual (EN/ZH) implications for any UI or content change
+    - Note SEO impact for content-facing changes
+  tasks:
+    - Break tasks into chunks that can be verified independently
+    - Each task should specify which files it touches
+    - Include a verification step (build, visual check, or test)
+    - Flag any task that requires new dependencies
