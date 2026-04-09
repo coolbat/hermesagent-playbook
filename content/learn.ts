@@ -236,6 +236,61 @@ export const learnTabs: LearnTab[] = [
     ],
   },
   {
+    id: "advanced-config",
+    label: { en: "Advanced Config", zh: "进阶配置" },
+    intro: {
+      en: "Go beyond the defaults. These guides cover workspace behavior rules, memory persistence, and parallel task execution — the three levers that separate a capable setup from a basic one.",
+      zh: "超越默认配置。这三篇指南覆盖工作区行为规则、记忆持久化和并行任务执行——正是这三个关键点区分了"能用"和"真好用"。",
+    },
+    tutorials: [
+      {
+        id: "agents-md-workspace-guide",
+        slug: "agents-md-workspace-guide",
+        title: { en: "Write an AGENTS.md That Actually Works", zh: "写一份真正有效的 AGENTS.md" },
+        summary: {
+          en: "Give your agent a behavior constitution: session startup order, memory write rules, safety boundaries, and a copy-paste template to start from.",
+          zh: "给你的 AI 写一部行为宪法：会话启动顺序、记忆写入规范、安全边界，以及一份可直接复制使用的模板。",
+        },
+        meta: { en: "Advanced · 12 min", zh: "高级 · 12 分钟" },
+        tags: {
+          en: ["AGENTS.md", "Workspace", "Behavior rules"],
+          zh: ["AGENTS.md", "工作区", "行为规则"],
+        },
+        cta: { label: { en: "Read guide", zh: "阅读指南" }, href: "/learn/agents-md-workspace-guide", variant: "secondary" },
+      },
+      {
+        id: "memory-system-and-flush",
+        slug: "memory-system-and-flush",
+        title: { en: "Memory System in Practice: Flush, Logs, and Search", zh: "记忆系统实战：Flush、结构化日志与语义检索" },
+        summary: {
+          en: "Configure memoryFlush to survive context compaction, write structured logs that memorySearch can actually find, and set up a free embedding API for semantic recall.",
+          zh: "配置 memoryFlush 应对上下文压缩，写出 memorySearch 能高命中率检索的结构化日志，并接入免费 embedding API 实现语义检索。",
+        },
+        meta: { en: "Advanced · 14 min", zh: "高级 · 14 分钟" },
+        tags: {
+          en: ["Memory", "memoryFlush", "memorySearch"],
+          zh: ["记忆系统", "memoryFlush", "语义检索"],
+        },
+        cta: { label: { en: "Read guide", zh: "阅读指南" }, href: "/learn/memory-system-and-flush", variant: "secondary" },
+      },
+      {
+        id: "sub-agent-parallel-tasks",
+        slug: "sub-agent-parallel-tasks",
+        title: { en: "Sub-Agents: Turn One Thread Into a Team", zh: "子 Agent：把单线程变成一支团队" },
+        summary: {
+          en: "Learn how to dispatch parallel sub-agents, pick the right model tier for each task, write task descriptions that actually work, and respect concurrency limits.",
+          zh: "学会派发并行子 Agent、为每种任务选择合适的模型档位、写出真正有效的任务描述，并了解并发上限怎么管。",
+        },
+        meta: { en: "Advanced · 11 min", zh: "高级 · 11 分钟" },
+        tags: {
+          en: ["Sub-agents", "Parallel", "Model tiers"],
+          zh: ["子 Agent", "并行任务", "模型分级"],
+        },
+        cta: { label: { en: "Read guide", zh: "阅读指南" }, href: "/learn/sub-agent-parallel-tasks", variant: "secondary" },
+      },
+    ],
+  },
+  {
     id: "advanced-troubleshooting",
     label: { en: "Advanced Troubleshooting", zh: "进阶排错" },
     intro: {

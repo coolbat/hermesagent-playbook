@@ -1,10 +1,10 @@
 ---
 title: "Basic Troubleshooting"
 summary: "Most first-run failures are missing verification steps, not mysterious platform bugs."
-readingTime: "4 min"
+readingTime: "6 min"
 ---
 
-When the first run fails, the fastest path is to narrow the symptom instead of changing multiple variables at once.
+When the first run fails, the fastest path is to narrow the symptom instead of changing multiple variables at once. For beginners, the biggest risk is usually not a deep bug. It is turning a simple problem into a complicated one.
 
 ## First checks
 
@@ -14,6 +14,8 @@ Start with the shortest verification loop:
 - Is the model credential valid?
 - Is the channel paired correctly?
 - Do logs show a clear error?
+
+Those four questions cover most Quick Start failures. Answer them first before you try deeper reasoning.
 
 ## How to avoid random debugging
 
@@ -26,10 +28,64 @@ Use this order:
 
 That sequence usually reveals whether you are dealing with setup, channel, credential, or workflow scope.
 
+The most valuable thing in troubleshooting is not "knowing more." It is keeping the order stable. Once your order is stable, it becomes much easier to tell which layer the problem belongs to.
+
+## Classify the problem by layer first
+
+Most first-run issues fall into one of these layers:
+
+- installation: commands do not run, services do not start, environment is incomplete
+- model: invalid key, wrong provider config, actual model call differs from what you expected
+- channel: the bot does not receive messages, permissions are missing, account binding is incomplete
+- workflow: the trigger arrives, but the flow is too broad or depends on too many things
+
+You do not need to know how to fix every layer immediately. You do need to know which layer you are in.
+
+## What the shortest troubleshooting loop looks like
+
+If you do not know where to start, go back to this loop:
+
+1. check whether the service is alive
+2. inspect recent logs for hard errors
+3. reproduce the issue with the smallest possible action
+4. change exactly one variable and retry
+5. see whether the problem moved
+
+"Did the problem move?" is an important question. If you started with "no message came back" and now you have "the message came back but the content failed," that is progress. It means you cleared one layer and reached the next one.
+
 ## Common beginner mistake
 
-Users often react to failure by changing the prompt, the model, and the environment all at once. That destroys the only useful evidence.
+Users often react to failure by changing the prompt, the model, the environment, and the skills all at once. That destroys the only useful evidence.
+
+Another common mistake is jumping to conclusions too early:
+
+- the bot is silent, so the model must be broken
+- the model errors once, so it must be a platform bug
+- one skill fails, so the whole system must be unstable
+
+At the Quick Start stage, many failures are just incomplete validation. They do not need to be interpreted as "the platform is broken."
+
+## When to stop guessing and switch to a focused guide
+
+If you can already describe the issue in a sentence like one of these, stop doing generic troubleshooting:
+
+- "The process is alive, but Feishu messages are not arriving."
+- "The channel works, but provider authentication fails."
+- "Basic chat replies work, but the starter workflow fails on trigger."
+- "The same command worked yesterday, and today only one skill fails."
+
+Once the symptom is specific, you should move into the matching Troubleshoot path instead of staying in broad Quick Start diagnosis.
+
+## The one habit that matters most
+
+For every troubleshooting attempt, try to leave behind these three pieces of information:
+
+- what action you took
+- what symptom you saw
+- what variable you changed
+
+That sharply reduces the "I tried a lot of things but cannot remember what actually changed" problem. Many debugging failures are not about difficulty. They are about poor records.
 
 ## A better next move
 
-After you identify the symptom clearly, jump into the dedicated Troubleshoot path and continue from the matching recovery guide.
+After you identify the symptom clearly, jump into the dedicated Troubleshoot path and continue from the matching recovery guide. The role of Quick Start is to move you from "I have no idea" to "I know which layer is failing."

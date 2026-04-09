@@ -1,10 +1,10 @@
 ---
 title: "Run a Starter Workflow"
-summary: "Pick a workflow that produces visible output and fails in diagnosable ways."
-readingTime: "5 min"
+summary: "Pick a workflow with clear output, short feedback loops, and failures you can diagnose."
+readingTime: "7 min"
 ---
 
-Your first workflow should prove that OpenClaw can produce a result you can inspect quickly.
+The goal of your first workflow is not to impress anyone. It is to prove that OpenClaw can reliably produce a result you can inspect quickly. Think of it as a test track, not the final system.
 
 ## Good first-workflow traits
 
@@ -22,6 +22,8 @@ Examples include:
 - structured notes
 - simple dispatch tasks
 
+If you are unsure what to choose, pick something with simple input, obvious output, and low validation cost. A good example is sending a link and asking for a summary back in the channel, or generating a short daily digest on a fixed schedule.
+
 ## What you are really proving
 
 You are not trying to build the final system yet. You are proving that:
@@ -32,10 +34,58 @@ You are not trying to build the final system yet. You are proving that:
 
 > “Useful and repeatable” matters more than “impressive.”
 
+## A solid starter workflow should pass this checklist
+
+Before you expand it, check whether the workflow has these properties:
+
+- it depends on only a small number of prerequisites
+- it does not require several external systems to succeed at once
+- success is obvious at a glance
+- when it fails, you know where to look first
+- you can rerun it several times in one day
+
+If a workflow needs four external APIs, two group chats, three skills, and one browser login state just to succeed once, it is not a good first workflow.
+
+## Recommended first task types
+
+At this stage, prefer work that is light, short, and observable:
+
+- summarize one article or page
+- turn a few links into a short briefing
+- read fixed input text and return structured bullet points
+- fetch a small amount of information from a fixed source and send it back
+- send one scheduled notification in a fixed format
+
+These are good starter tasks because success is clear, failure is clear, and they do not leave you wondering which subsystem broke.
+
+## Do not start with these more ambitious patterns
+
+These can be powerful, but they are poor first workflows:
+
+- multi-agent collaboration systems
+- long automation chains across multiple SaaS tools
+- workflows that depend on rich long-term memory
+- content factories with dozens of steps
+- systems that require browser login state, complicated permissions, and multi-channel distribution
+
+Those are not bad goals. They just belong after you already have one small path working.
+
 ## Common beginner mistake
 
-Starting with a workflow that is too broad creates ambiguous failure. When everything is coupled, nothing is easy to fix.
+Starting with a workflow that is too broad creates ambiguous failure. When everything is coupled, nothing is easy to fix. What you get is not proof of capability. You get a pile of uncertainty.
+
+Another common mistake is optimizing for demo value. A workflow that looks smart is not automatically a good starter workflow. The first one should build confidence and diagnostic clarity.
+
+## What to record once it works
+
+When your first workflow succeeds, record these three things:
+
+- what the trigger was
+- what successful output looked like
+- where you would look first if it failed
+
+That becomes your reference sample for future templates, skills, and scheduled tasks. When more complex flows break, you can always fall back to this shortest known-good path.
 
 ## A better next move
 
-Once one starter workflow runs, you can either deepen your foundations in Learn or expand with Templates that match your goal.
+Once one starter workflow runs, you can either deepen your foundations in Learn or expand with Templates that match your goal. If it does not run yet, do not expand the scope. Make the workflow smaller first.

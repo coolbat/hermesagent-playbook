@@ -1,10 +1,10 @@
 ---
 title: "Connect a Chat Channel"
-summary: "Your first real milestone is a successful message loop, not a finished installation."
-readingTime: "4 min"
+summary: "Your first real milestone is a working message loop, not just a completed install."
+readingTime: "6 min"
 ---
 
-Installation only proves the process can start. A connected channel proves the system can **receive, route, and answer**.
+Installation only proves the process can start. A connected channel proves the system can **receive, route, and answer**. This step matters because it is the first time OpenClaw stops being "something running in the background" and becomes something you can actually use.
 
 ## What success looks like
 
@@ -17,6 +17,8 @@ That sounds small, but it removes a huge amount of uncertainty:
 - the message path is valid
 - basic runtime behavior is visible
 
+If you can send one message and get one reply back, you have already crossed one of the most important Quick Start milestones.
+
 ## Keep the first channel simple
 
 Use the channel that is easiest for you to inspect and retry, such as:
@@ -25,10 +27,62 @@ Use the channel that is easiest for you to inspect and retry, such as:
 - Feishu
 - another already-supported chat entry point
 
+The standard is not "which channel is most powerful." It is "which channel makes input, output, and errors easiest to observe." For the first connection, avoid the most complex option with the heaviest enterprise permissions or the hardest login story.
+
+## Recommended connection order
+
+Break this step down aggressively:
+
+1. Pick the chat channel you know best.
+2. Configure only one account.
+3. As soon as the binding is done, send the shortest possible test message.
+4. Check whether the reply comes back, then check whether logs exist.
+5. Only after that should you think about group permissions, multi-account setups, or more channels.
+
+Keep the first test message simple too. Do not start with web search, file access, or skill execution. First confirm that ordinary message-in, message-out works.
+
+## What that one test message is actually verifying
+
+This step is not only about proving "the bot can reply." It verifies an entire chain:
+
+- the channel-side configuration is correct
+- OpenClaw receives the incoming event
+- the linked account or bot token is valid
+- the message is routed into the correct session
+- model invocation does not fail on the shortest path
+- the result can be sent back into the channel
+
+That is why you want to do this as early as possible. It collapses a lot of uncertainty very quickly.
+
+## If the bot stays silent, check these categories first
+
+Most "channel issues" are not exotic. They usually fall into one of these buckets:
+
+- the account or token is wrong
+- callbacks, event subscriptions, or permissions are missing
+- the bot is present in the channel but lacks send/receive rights
+- the OpenClaw process is not actually healthy
+- the model call failed, making it look like the message never arrived
+
+The fastest path is to narrow the problem to one of two states: "the message never arrived" or "the message arrived but nothing got sent back."
+
 ## Common beginner mistake
 
-When the bot stays silent, many users start adding skills or rewriting prompts. That usually makes the signal worse.
+When the bot stays silent, many users start adding skills, rewriting prompts, or even switching models. That usually makes the signal worse. Until the message loop is working, feature expansion has almost no value.
+
+Another common mistake is treating a "connected" badge in some admin screen as success. Real success has only one definition: **you send a message in a real chat interface, and the bot actually replies**.
+
+## What you should have before moving on
+
+Before continuing, you should ideally have all of these:
+
+- one primary channel chosen as the first entry point
+- one successful real message round-trip
+- a clear idea of whether channel failures should be checked as account, permissions, or log issues
+- no self-inflicted complexity from multi-channel or multi-account sprawl
+
+At that point, OpenClaw has stopped being "installed on your machine" and started being callable.
 
 ## A better next move
 
-If the channel works, move to **one starter workflow**. If the channel fails, treat it as a channel problem first, not a workflow problem.
+If the channel works, move to **one starter workflow**. If it does not, treat it as a channel problem first, not a workflow problem. Do not optimize workflow design before message delivery is proven.
