@@ -2,7 +2,9 @@ import "server-only";
 
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { compileMDX } from "next-mdx-remote/rsc";
+import * as runtime from "react/jsx-runtime";
+import { evaluate } from "@mdx-js/mdx";
+import matter from "gray-matter";
 import remarkGfm from "remark-gfm";
 
 import { mdxComponents } from "@/components/mdx";
@@ -51,10 +53,10 @@ async function renderMdx<TFrontmatter extends MdxFrontmatter>(
 ) {
   const filePath = getMdxPath(section, locale, slug);
 
-  let source: string;
+  let raw: string;
 
   try {
-    source = await fs.readFile(filePath, "utf8");
+    raw = await fs.readFile(filePath, "utf8");
   } catch (error) {
     throw new Error(
       `Missing MDX content for section "${section}", slug "${slug}", locale "${locale}" at ${filePath}`,
@@ -62,16 +64,16 @@ async function renderMdx<TFrontmatter extends MdxFrontmatter>(
     );
   }
 
-  return compileMDX<TFrontmatter>({
-    source,
-    components: mdxComponents,
-    options: {
-      parseFrontmatter: true,
-      mdxOptions: {
-        remarkPlugins: [remarkGfm],
-      },
-    },
+  const { content: mdxBody, data: frontmatter } = matter(raw);
+
+  const { default: MDXContent } = await evaluate(mdxBody, {
+    ...(runtime as Parameters<typeof evaluate>[1]),
+    remarkPlugins: [remarkGfm],
   });
+
+  const content = MDXContent({ components: mdxComponents });
+
+  return { content, frontmatter: frontmatter as TFrontmatter };
 }
 
 export async function renderPageMdx(slug: string, locale: Locale) {
