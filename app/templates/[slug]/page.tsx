@@ -26,7 +26,6 @@ type TemplateArticlePageProps = {
     slug: string;
   }>;
 };
-
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: TemplateArticlePageProps): Promise<Metadata> {
