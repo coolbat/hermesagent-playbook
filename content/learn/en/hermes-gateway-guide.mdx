@@ -1,0 +1,65 @@
+---
+title: Hermes Gateway Guide
+summary: Learn when the gateway is required, how it fits between Hermes and messaging platforms, and what to verify first when it breaks.
+readingTime: 9 min
+---
+
+The gateway is the layer that turns a healthy local Hermes runtime into a reachable platform loop. If you only use the CLI, you may not need it yet. If you want Hermes to respond through Telegram, Discord, or other external surfaces, the gateway becomes part of your critical path.
+
+## What the gateway actually does
+
+Think of the gateway as the routing layer between Hermes and external platforms:
+
+- it receives platform-facing events
+- it forwards them into the Hermes runtime
+- it returns output back to the correct destination
+
+That means a broken gateway can make Hermes look broken even when the core runtime is fine.
+
+## When you need it
+
+You usually need `hermes gateway` when:
+
+- the CLI works
+- the provider works
+- but external messages never complete the round trip
+
+If your entire workflow lives in the terminal, the gateway is not your first concern.
+
+## The correct debugging order
+
+Do not start with the platform. Start with the core runtime:
+
+1. confirm Hermes works in the CLI
+2. confirm the provider still responds
+3. start or restart the gateway
+4. send one clean platform message
+5. compare platform behavior with gateway logs
+
+This order tells you whether the issue belongs to runtime health or platform routing.
+
+## One clean platform loop
+
+For the first gateway test, keep the loop narrow:
+
+- one platform
+- one account
+- one simple text message
+- one expected reply
+
+If that fails, the signal is still clean enough to debug.
+
+## Common failure pattern
+
+The most common mistake is assuming "gateway running" means "gateway healthy." A process can be alive while:
+
+- reading the wrong environment
+- pointing at stale callbacks
+- routing to the wrong destination
+- failing silently at the platform boundary
+
+Treat gateway debugging as routing debugging, not just process debugging.
+
+## Next move
+
+If you need more control over runtime behavior, continue with [Understand `config.yaml` Without Guessing](/learn/hermes-config-yaml).

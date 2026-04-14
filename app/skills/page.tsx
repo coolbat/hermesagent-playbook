@@ -14,26 +14,26 @@ export async function generateMetadata(): Promise<Metadata> {
   return createPageMetadata({
     locale,
     title: {
-      en: "Curated OpenClaw Skills",
-      zh: "OpenClaw 精选技能库",
+      en: "Hermes Agent Skills Guide",
+      zh: "Hermes Agent 技能指南",
     },
     description: {
-      en: "A curated set of OpenClaw skills organized by task category — research, content, productivity, DevOps, communications, and Chinese ecosystem — with risk level and starter guidance.",
-      zh: "按任务类别精选的 OpenClaw 技能集合：调研、内容、效率、DevOps、通讯和中文生态，附带风险等级和新手建议。",
+      en: "Understand Hermes Agent skills through built-in essentials, Hub-installed options, coding delegation, and platform utilities.",
+      zh: "从内置核心技能、Hub 安装选项、编码委派能力和平台工具四个角度理解 Hermes Agent 技能体系。",
     },
     path: "/skills",
     keywords: {
       en: [
-        "OpenClaw skills",
-        "OpenClaw automation skills",
-        "OpenClaw curated skills",
-        "OpenClaw skill install",
+        "Hermes Agent skills",
+        "Hermes Agent skills hub",
+        "Hermes Agent built-in skills",
+        "Hermes Agent skill install",
       ],
       zh: [
-        "OpenClaw 技能",
-        "OpenClaw 自动化技能",
-        "OpenClaw 精选技能",
-        "OpenClaw 技能安装",
+        "Hermes Agent 技能",
+        "Hermes Agent 技能中心",
+        "Hermes Agent 内置技能",
+        "Hermes Agent 技能安装",
       ],
     },
   });
@@ -49,13 +49,13 @@ export default async function SkillsPage() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            name: locale === "zh" ? "OpenClaw 精选技能库" : "Curated OpenClaw Skills",
+            name: locale === "zh" ? "Hermes Agent 技能指南" : "Hermes Agent Skills Guide",
             url: absoluteLocalizedUrl("/skills", locale),
             inLanguage: locale === "zh" ? "zh-CN" : "en",
             description:
               locale === "zh"
-                ? "按任务类别精选的 OpenClaw 技能集合，附带风险等级和新手建议。"
-                : "A curated set of OpenClaw skills organized by task category, with risk level and starter guidance.",
+                ? "从内置核心技能、Hub 安装技能、编码委派和平台工具四个角度理解 Hermes Agent 技能体系。"
+                : "Understand Hermes Agent skills through built-in essentials, Hub-installed options, coding delegation, and platform utilities.",
             isPartOf: {
               "@type": "WebSite",
               name: siteName,

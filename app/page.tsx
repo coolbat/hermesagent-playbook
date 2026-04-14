@@ -27,28 +27,28 @@ export async function generateMetadata(): Promise<Metadata> {
   return createPageMetadata({
     locale,
     title: {
-      en: "Quick Start for OpenClaw Beginners",
-      zh: "OpenClaw 新手 Quick Start",
+      en: "Quick Start for Hermes Agent Beginners",
+      zh: "Hermes Agent 新手 Quick Start",
     },
     description: {
-      en: "OpenClaw quick start for beginners: learn the system, finish setup, connect one channel, and run your first useful workflow.",
-      zh: "OpenClaw 新手快速上手：先建立系统认知，完成 setup、渠道接通和首个入门工作流验证，再在首次失败时快速回到正确的排错路径，避免长期卡在环境和技能层面的伪问题里。",
+      en: "Hermes Agent quick start for beginners: learn the system, finish setup, connect one channel, and run your first useful workflow.",
+      zh: "Hermes Agent 新手快速上手：先建立系统认知，完成 setup、渠道接通和首个入门工作流验证，再在首次失败时快速回到正确的排错路径，避免长期卡在环境和技能层面的伪问题里。",
     },
     path: "/",
     keywords: {
       en: [
-        "OpenClaw quick start",
-        "OpenClaw beginner guide",
-        "OpenClaw setup",
-        "OpenClaw first workflow",
-        "OpenClaw onboarding",
+        "Hermes Agent quick start",
+        "Hermes Agent beginner guide",
+        "Hermes Agent setup",
+        "Hermes Agent first workflow",
+        "Hermes Agent onboarding",
       ],
       zh: [
-        "OpenClaw 快速上手",
-        "OpenClaw 新手指南",
-        "OpenClaw setup",
-        "OpenClaw 第一个工作流",
-        "OpenClaw 入门",
+        "Hermes Agent 快速上手",
+        "Hermes Agent 新手指南",
+        "Hermes Agent setup",
+        "Hermes Agent 第一个工作流",
+        "Hermes Agent 入门",
       ],
     },
   });
@@ -57,7 +57,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function HomePage() {
   const locale = await getRequestLocale();
   const homePageName =
-    locale === "zh" ? "OpenClaw 新手 Quick Start" : "Quick Start for OpenClaw Beginners";
+    locale === "zh" ? "Hermes Agent 新手 Quick Start" : "Quick Start for Hermes Agent Beginners";
   const homepageSummary = pickLocalizedText(homeHero.summary, locale);
   const faqEntities = homeFaq.map((item) => ({
     "@type": "Question",

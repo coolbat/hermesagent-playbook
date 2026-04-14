@@ -4,19 +4,19 @@ summary: Configure memoryFlush to survive context compaction, write structured l
 readingTime: 14 min
 ---
 
-Long conversations with OpenClaw eventually hit a wall: the agent starts forgetting things you told it an hour ago. This is not a bug — it is context compaction, and it is working as designed. The problem is that the default behavior discards detail you probably wanted to keep.
+Long conversations with Hermes Agent eventually hit a wall: the agent starts forgetting things you told it an hour ago. This is not a bug — it is context compaction, and it is working as designed. The problem is that the default behavior discards detail you probably wanted to keep.
 
 This guide covers three things: stopping important information from being lost during compaction, writing logs that are actually retrievable later, and wiring up semantic search so the agent can find old context without reading every file.
 
 ## Why the agent "forgets"
 
-Every model has a context window limit. When a conversation approaches that limit, OpenClaw automatically compresses older messages into a summary to free up space. The compression is lossy — details get dropped.
+Every model has a context window limit. When a conversation approaches that limit, Hermes Agent automatically compresses older messages into a summary to free up space. The compression is lossy — details get dropped.
 
 The result: you are mid-task, the agent was tracking something important, compaction fires, and now it has lost the thread.
 
 ## Fix 1: memoryFlush — save before compaction fires
 
-`memoryFlush` tells the agent to write important information to files **before** compaction runs. Add this to `openclaw.json`:
+`memoryFlush` tells the agent to write important information to files **before** compaction runs. Add this to `~/.hermes/config.yaml`:
 
 ```json
 {
@@ -109,7 +109,7 @@ For users in China, SiliconFlow's `bge-m3` model is free, requires no credit car
 
 To get a SiliconFlow API key: go to siliconflow.cn → register → dashboard → create API key. The `bge-m3` model is free with no usage limits.
 
-Why `bge-m3`: 1024-dimension vectors, strong bilingual performance, and it is free. For most OpenClaw memory workloads, this is the right default.
+Why `bge-m3`: 1024-dimension vectors, strong bilingual performance, and it is free. For most Hermes Agent memory workloads, this is the right default.
 
 ## Fix 4: automatic memory maintenance
 

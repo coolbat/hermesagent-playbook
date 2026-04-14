@@ -1,0 +1,65 @@
+---
+title: "What Is Hermes Agent"
+summary: "Understand Hermes as an agent runtime with tools, skills, memory, and gateways before you start configuring it."
+readingTime: "8 min"
+---
+
+Many first-time users approach Hermes Agent as "a chatbot with more integrations." That framing is understandable, but it is too small. Hermes becomes valuable when you stop optimizing for one good answer and start optimizing for a repeatable loop.
+
+## The right mental model
+
+Treat Hermes Agent as an **agent runtime**:
+
+- the model handles reasoning
+- toolsets and skills give it usable capabilities
+- the workspace holds context and memory
+- gateways and messaging platforms turn it into a callable system
+
+That is why Hermes can feel much more operational than a normal chat interface. It is designed to receive input, decide what to call, produce output, and do it again tomorrow.
+
+## What Hermes is best at
+
+Hermes works best when a task has all three of these:
+
+1. A stable input path, such as CLI, Telegram, Discord, or a gateway-driven request.
+2. A clear execution path, such as "read context, use tools, write result."
+3. A concrete output, such as a summary, draft, note, alert, or code change.
+
+If a task is purely exploratory and does not need tools, context, or repeatability, plain chat may be enough.
+
+## Why the official docs start with setup and provider configuration
+
+The official quickstart emphasizes installation and model setup because Hermes is not useful until the base loop is healthy. Before you add skills, voice, or messaging, you need to prove that:
+
+- `hermes` starts cleanly
+- one provider is configured correctly
+- the agent can answer in the CLI
+
+That baseline removes a huge amount of noise from later troubleshooting.
+
+## Skills are a capability boundary
+
+Hermes without the right skills is still limited. Skills are what let the agent browse, inspect files, delegate coding, or work with platform-specific surfaces. The official Skills Hub exists because Hermes is meant to grow beyond the default loop when your use case requires it.
+
+This is also why the best first workflow is narrow. A narrow workflow tells you whether the system is missing:
+
+- provider setup
+- gateway routing
+- a required skill
+- output discipline
+
+## What success looks like in your first session
+
+A good first win is not a huge autonomous system. It is a short loop you can explain:
+
+1. Start Hermes.
+2. Confirm the provider works.
+3. Ask for one task.
+4. Inspect the result.
+5. Know what to check if it fails.
+
+Once that loop is real, the rest of Hermes makes much more sense.
+
+## Next move
+
+Go straight to [Install and Configure](/quick-start/deploy-install) next. That is where you turn this mental model into a working Hermes environment.

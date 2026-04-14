@@ -1,81 +1,84 @@
 ---
-title: "Deploy / Install"
-summary: "Choose the shortest validation path instead of chasing a full architecture on day one."
-readingTime: "7 min"
+title: "Install and Configure Hermes Agent"
+summary: "Follow the official install path first, then verify one provider and one healthy CLI session."
+readingTime: "10 min"
 ---
 
-The goal of the first installation is not to build a perfect production setup. It is to confirm that OpenClaw **can start, can call a model, and can leave enough evidence for debugging**. If those three things are true, the installation phase has done its job.
+Your first install does not need to be perfect. It needs to prove three things:
 
-## What “good enough” looks like
+- Hermes is installed correctly
+- one model provider is configured
+- the CLI loop works end to end
 
-For a beginner, a "good enough" installation is one that lets you answer yes to these questions:
+## Use the official installer
 
-- Does the process start cleanly?
-- Does one model provider authenticate?
-- Can I inspect logs when something fails?
+The Hermes docs recommend the one-line installer on macOS, Linux, and WSL2:
 
-If yes, that is enough to continue. Multi-channel routing, extra skills, remote gateways, and scheduled automation should all come after this baseline.
+```bash
+curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
+```
 
-## Minimum preparation before you start
+What the installer sets up for you:
 
-Do not begin by reading ten tutorials. Start by making sure the minimum prerequisites are in place:
+- required local dependencies
+- the Hermes repo and environment
+- the global `hermes` command
+- the setup flow for your first provider
 
-- a machine you can keep using
-- a working command-line environment
-- a supported Node.js version
-- one usable model provider credential
-- a bit of patience, because first installs often fail on small environment details
+If you skipped provider setup during install, run it explicitly:
 
-If this is your first time with a tool like this, put the first setup on the machine you know best. Do not learn OpenClaw, a new operating system, and remote server administration all at once.
+```bash
+hermes setup
+```
 
-## Recommended installation order
+## Configure one provider only
 
-1. Start with the simplest path, usually local.
-2. Install the base product and confirm the command is available.
-3. Connect only one model provider and verify the credential immediately.
-4. Run the shortest possible health check and confirm logs are visible.
-5. Do not add optional services before the basic health check passes.
+Do not set up three providers at once. Pick one and make it healthy first.
 
-> Every optional dependency you add before the first health check makes debugging slower.
+The official docs call out two simple paths:
 
-## Recommended minimum validation actions
+- run `hermes setup`
+- or run `hermes model` and select a provider interactively
 
-After installation, do not jump straight into Feishu setup or a pile of skills. Start with short checks like these:
+Most provider credentials end up in `~/.hermes/.env`. Keep that file minimal at first.
 
-- confirm the CLI responds, for example through help output
-- run one initialization or onboarding flow
-- verify model authentication succeeds
-- inspect whether the config file and workspace were actually created
-- check status or logs to confirm this is not a silent failure
+## Validate the base loop
 
-If you can complete those checks, the installation path is basically healthy. At this stage, observability matters more than feature count.
+After installation, reload your shell if needed and start Hermes:
 
-## Four things to avoid during installation
+```bash
+source ~/.zshrc
+hermes
+```
 
-These choices make the first install significantly harder:
+You are looking for one simple success condition: the agent responds normally in the CLI.
 
-- starting with remote deployment or complex networking
-- configuring multiple providers at once, then losing track of which one failed
-- installing many skills before the base stack is verified
-- changing environment, config, model, and channel together after one error
+If that works, your provider, runtime, and command path are healthy enough to continue.
 
-The biggest enemy of first-run installation is not slowness. It is too many moving parts.
+## What not to add yet
 
-## When installation fails, classify the layer first
+Do not add these before the base loop is stable:
 
-Most install errors fall into one of these four layers:
+- messaging platforms
+- voice mode
+- optional skills from the Hub
+- multi-agent delegation
+- scheduled automations
 
-- environment: Node version, system dependencies, path issues
-- network: download failures, proxy issues, repository fetch problems
-- credentials: invalid key, wrong provider config
-- configuration: incomplete initialization, inconsistent config files
+Those are second-layer features. First make the core runtime boring and reliable.
 
-Classifying the layer first is more useful than blindly searching the exact error text. You do not just need a matching string. You need to know which part of the chain is broken.
+## If the install path fails
 
-## Common beginner mistake
+Use the shortest debug sequence:
 
-Many users treat setup like an infrastructure design project. They spend a lot of time refining the environment, switching deployment options, and debating best practices before proving a single useful workflow.
+```bash
+hermes setup
+hermes model
+hermes doctor
+```
 
-## A better next move
+`hermes doctor` is the fastest way to catch missing dependencies, broken environment state, and common configuration mistakes.
 
-Once the base environment starts reliably, move to **one chat channel**. A system that can start only proves the backend is alive. A system that can receive and answer a message is the first real usable loop.
+## Next move
+
+Once Hermes works in the CLI, continue to [Connect a Chat Channel](/quick-start/connect-channel) or stay local and jump straight to your first workflow.

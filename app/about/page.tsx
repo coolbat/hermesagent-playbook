@@ -13,17 +13,17 @@ export async function generateMetadata(): Promise<Metadata> {
   return createPageMetadata({
     locale,
     title: {
-      en: "About OpenClaw Playbook",
-      zh: "关于 OpenClaw Playbook",
+      en: "About Hermes Agent Playbook",
+      zh: "关于 Hermes Agent Playbook",
     },
     description: {
-      en: "About OpenClaw Playbook: what this onboarding site is for, who it helps, and what content boundaries it follows.",
-      zh: "关于 OpenClaw Playbook：这个 onboarding 站点服务谁、解决什么问题，以及它遵守哪些内容边界。",
+      en: "About Hermes Agent Playbook: what this onboarding site is for, who it helps, and what content boundaries it follows.",
+      zh: "关于 Hermes Agent Playbook：这个 onboarding 站点服务谁、解决什么问题，以及它遵守哪些内容边界。",
     },
     path: "/about",
     keywords: {
-      en: ["OpenClaw Playbook about", "OpenClaw onboarding site", "OpenClaw learning hub"],
-      zh: ["OpenClaw Playbook 关于", "OpenClaw onboarding 站点", "OpenClaw 学习中心"],
+      en: ["Hermes Agent Playbook about", "Hermes Agent onboarding site", "Hermes Agent learning hub"],
+      zh: ["Hermes Agent Playbook 关于", "Hermes Agent onboarding 站点", "Hermes Agent 学习中心"],
     },
   });
 }
@@ -39,12 +39,12 @@ export default async function AboutPage() {
           {
             "@context": "https://schema.org",
             "@type": "AboutPage",
-            name: locale === "zh" ? "关于 OpenClaw Playbook" : "About OpenClaw Playbook",
+            name: locale === "zh" ? "关于 Hermes Agent Playbook" : "About Hermes Agent Playbook",
             url: absoluteLocalizedUrl("/about", locale),
             description:
               locale === "zh"
-                ? "说明 OpenClaw Playbook 的定位、发布内容，以及它不试图成为什么。"
-                : "What OpenClaw Playbook is for, what it publishes, and what it does not try to be.",
+                ? "说明 Hermes Agent Playbook 的定位、发布内容，以及它不试图成为什么。"
+                : "What Hermes Agent Playbook is for, what it publishes, and what it does not try to be.",
             inLanguage: locale === "zh" ? "zh-CN" : "en",
             isPartOf: {
               "@type": "WebSite",
@@ -76,12 +76,12 @@ export default async function AboutPage() {
         className="page-hero hero-single"
         kicker="ABOUT"
         title={{
-          en: "What OpenClaw Playbook is for.",
-          zh: "OpenClaw Playbook 是做什么的。",
+          en: "What Hermes Agent Playbook is for.",
+          zh: "Hermes Agent Playbook 是做什么的。",
         }}
         summary={{
-          en: "This site exists to give beginners a shorter, clearer path from setup to a first useful OpenClaw workflow.",
-          zh: "这个站点的目标，是给新手一条更短、更清楚的路径，从 setup 一直走到第一个真正有用的 OpenClaw 工作流。",
+          en: "This site exists to give beginners a shorter, clearer path from setup to a first useful Hermes Agent workflow.",
+          zh: "这个站点的目标，是给新手一条更短、更清楚的路径，从 setup 一直走到第一个真正有用的 Hermes Agent 工作流。",
         }}
       />
 

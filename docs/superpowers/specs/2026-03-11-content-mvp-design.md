@@ -1,10 +1,10 @@
-# OpenClaw Content-First MVP Design
+# Hermes Agent Content-First MVP Design
 
 **Date:** 2026-03-11
 
 ## Summary
 
-This MVP turns the current OpenClaw Playbook prototype into a launchable content website with `Learn` as the primary user journey. The site should help a new visitor understand what OpenClaw is, choose a learning path, discover a small set of practical templates, and find the shortest troubleshooting path when setup fails.
+This MVP turns the current Hermes Agent Playbook prototype into a launchable content website with `Learn` as the primary user journey. The site should help a new visitor understand what Hermes Agent is, choose a learning path, discover a small set of practical templates, and find the shortest troubleshooting path when setup fails.
 
 The first release is intentionally content-first rather than product-heavy. It should feel complete enough to publish, but avoid building account systems, CMS workflows, or complex template search before the core information architecture proves useful.
 
@@ -26,9 +26,9 @@ The first release is intentionally content-first rather than product-heavy. It s
 
 ## Primary Audience
 
-### New OpenClaw learners
+### New Hermes Agent learners
 
-People who have heard about OpenClaw and want to understand how it works, what it is good at, and how to get started without reading fragmented notes.
+People who have heard about Hermes Agent and want to understand how it works, what it is good at, and how to get started without reading fragmented notes.
 
 ### Early practitioners
 
@@ -36,11 +36,11 @@ People who want a practical starting point, such as a template or setup checklis
 
 ### Blocked users
 
-People who already tried to install or run OpenClaw and need structured help for common failure modes.
+People who already tried to install or run Hermes Agent and need structured help for common failure modes.
 
 ## Product Positioning
 
-The site should present OpenClaw as a system for real workflows rather than a vague AI chatbot. The learning experience should emphasize practical outcomes, explicit structure, and lower confusion for bilingual users.
+The site should present Hermes Agent as a system for real workflows rather than a vague AI chatbot. The learning experience should emphasize practical outcomes, explicit structure, and lower confusion for bilingual users.
 
 The tone should be direct, operational, and confidence-building. Pages should reduce guesswork and push users toward the next concrete step.
 

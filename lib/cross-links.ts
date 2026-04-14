@@ -64,7 +64,7 @@ const templateToLearnAndTroubleshoot: Record<
     troubleshootSlug: "permission-gaps",
   },
   "research-analysis": {
-    learnSlug: "openclaw-vs-chatbots",
+    learnSlug: "hermes-agent-vs-chatbots",
     troubleshootSlug: "workflow-too-broad",
   },
   "monitoring-alerts": {
@@ -85,8 +85,8 @@ const quickStartToLearnTemplateAndTroubleshoot: Record<
     troubleshootSlug: string;
   }
 > = {
-  "what-is-openclaw": {
-    learnSlug: "openclaw-vs-chatbots",
+  "what-is-hermes-agent": {
+    learnSlug: "hermes-agent-vs-chatbots",
     templateSlug: "daily-ai-news-digest",
     troubleshootSlug: "bot-silent",
   },

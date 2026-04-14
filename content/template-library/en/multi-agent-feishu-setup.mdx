@@ -12,7 +12,7 @@ Use this when one Feishu bot is not enough. Common scenarios:
 - Different teams need different AI personalities or model choices
 - You want to run Claude for reasoning tasks and a local model for routine ones, all accessible from Feishu
 
-A single OpenClaw instance can manage all of them. The key is the three-concept architecture: Accounts, Agents, and Bindings.
+A single Hermes Agent instance can manage all of them. The key is the three-concept architecture: Accounts, Agents, and Bindings.
 
 ## Core architecture
 
@@ -31,13 +31,13 @@ One account maps to one agent. One agent can serve multiple accounts. Bindings a
 Each agent needs its own directory for memory and persona isolation:
 
 ```bash
-mkdir -p ~/.openclaw/workspaces/assistant_workspace
-mkdir -p ~/.openclaw/workspaces/coder_workspace
+mkdir -p ~/.hermes/workspaces/assistant_workspace
+mkdir -p ~/.hermes/workspaces/coder_workspace
 ```
 
 Give each workspace its own `SOUL.md` defining the bot's personality and role.
 
-**Step 2: Configure openclaw.json**
+**Step 2: Configure ~/.hermes/config.yaml**
 
 ```json
 {
@@ -45,12 +45,12 @@ Give each workspace its own `SOUL.md` defining the bot's personality and role.
     "list": [
       {
         "id": "agent_assistant",
-        "workspace": "~/.openclaw/workspaces/assistant_workspace",
+        "workspace": "~/.hermes/workspaces/assistant_workspace",
         "model": "your-provider/claude-sonnet-4-6"
       },
       {
         "id": "agent_coder",
-        "workspace": "~/.openclaw/workspaces/coder_workspace",
+        "workspace": "~/.hermes/workspaces/coder_workspace",
         "model": "your-provider/claude-opus-4-6"
       }
     ]
@@ -94,7 +94,7 @@ Give each workspace its own `SOUL.md` defining the bot's personality and role.
 **Step 3: Restart and verify**
 
 ```bash
-openclaw gateway restart
+hermes gateway
 ```
 
 Send a direct message to each bot and confirm it responds with the correct persona.

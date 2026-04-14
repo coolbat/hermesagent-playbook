@@ -1,0 +1,33 @@
+---
+title: Skills are installed, but Hermes does not use them
+summary: A workflow that should invoke extra capability falls back to generic chat behavior or never reaches the expected action.
+readingTime: 6 min
+---
+
+## What this usually means
+
+This is often a capability registration or routing problem, not a model-quality problem.
+
+## First recovery loop
+
+Reduce the task to one explicit capability test. Do not test the whole workflow.
+
+For example:
+
+- one skill
+- one short instruction
+- one expected action
+
+If Hermes still behaves like generic chat, the capability path is probably not active in the way you think it is.
+
+## What to verify next
+
+Check three things:
+
+- the expected capability is actually available in the current session
+- your task phrasing is specific enough to invoke it
+- the workflow does not assume a local capability that was never validated
+
+## If the issue persists
+
+Compare your live environment against the intended skills path in docs or config. Do not keep changing prompts until you know the capability exists.

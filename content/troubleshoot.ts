@@ -21,8 +21,8 @@ export type TroubleshootTab = {
 export const troubleshootIntro = {
   kicker: "SYMPTOM-FIRST HELP",
   title: {
-    en: "Diagnose OpenClaw by symptom, not by random guesses.",
-    zh: "按症状诊断 OpenClaw，而不是靠随机猜测。",
+    en: "Diagnose Hermes Agent by symptom, not by random guesses.",
+    zh: "按症状诊断 Hermes Agent，而不是靠随机猜测。",
   },
   summary: {
     en: "Use Troubleshoot as a diagnostic hub: start from what failed, narrow the likely causes, and only then change setup, models, or workflows.",
@@ -35,8 +35,8 @@ export const troubleshootTabs: TroubleshootTab[] = [
     id: "bot-silence",
     label: { en: "Bot not responding", zh: "机器人无响应" },
     intro: {
-      en: "Use this when a message is sent successfully but OpenClaw never produces a useful reply or the bot appears online without doing any real work.",
-      zh: "当消息已经发出去，但 OpenClaw 没有给出有效回复，或机器人看起来在线却没有真正执行时，从这里开始。",
+      en: "Use this when a message is sent successfully but Hermes Agent never produces a useful reply or the bot appears online without doing any real work.",
+      zh: "当消息已经发出去，但 Hermes Agent 没有给出有效回复，或机器人看起来在线却没有真正执行时，从这里开始。",
     },
     entries: [
       {
@@ -56,8 +56,8 @@ export const troubleshootTabs: TroubleshootTab[] = [
           zh: ["渠道配对未完成", "Webhook 或事件监听缺失", "测试消息发到了错误目标"],
         },
         checks: {
-          en: ["Verify bot presence in the target channel", "Send one plain test message", "Confirm the event reaches OpenClaw logs"],
-          zh: ["确认机器人在目标渠道中", "发送一条纯文本测试消息", "确认事件已进入 OpenClaw 日志"],
+          en: ["Verify bot presence in the target channel", "Send one plain test message", "Confirm the event reaches Hermes Agent logs"],
+          zh: ["确认机器人在目标渠道中", "发送一条纯文本测试消息", "确认事件已进入 Hermes Agent 日志"],
         },
         cta: {
           label: { en: "Review setup path", zh: "回看 setup 路径" },
@@ -82,8 +82,8 @@ export const troubleshootTabs: TroubleshootTab[] = [
           zh: ["守护进程启动后崩溃", "后台服务反复重启", "安装后缺少运行时依赖"],
         },
         checks: {
-          en: ["Run `openclaw status`", "Read the latest logs tail", "Confirm health checks stay green for a few minutes"],
-          zh: ["执行 `openclaw status`", "查看最新日志 tail", "确认健康检查能稳定几分钟都为正常"],
+          en: ["Run `hermes doctor`", "Read the latest gateway or CLI logs tail", "Confirm the process stays healthy for a few minutes"],
+          zh: ["执行 `hermes doctor`", "查看最新 gateway 或 CLI 日志 tail", "确认进程能稳定几分钟都为正常"],
         },
         cta: {
           label: { en: "Open diagnostics tab", zh: "查看诊断入口" },
@@ -123,8 +123,8 @@ export const troubleshootTabs: TroubleshootTab[] = [
     id: "install-environment",
     label: { en: "Install & environment", zh: "安装与环境" },
     intro: {
-      en: "Use this when OpenClaw never reaches a stable runnable state, installs partially, or behaves differently each time you restart it.",
-      zh: "如果 OpenClaw 始终进不了稳定可运行状态、安装只完成一半，或每次重启表现都不一样，就从这里排查。",
+      en: "Use this when Hermes Agent never reaches a stable runnable state, installs partially, or behaves differently each time you restart it.",
+      zh: "如果 Hermes Agent 始终进不了稳定可运行状态、安装只完成一半，或每次重启表现都不一样，就从这里排查。",
     },
     entries: [
       {
@@ -184,8 +184,8 @@ export const troubleshootTabs: TroubleshootTab[] = [
         slug: "dependency-drift",
         title: { en: "Dependencies drifted after install", zh: "安装后依赖漂移" },
         symptom: {
-          en: "OpenClaw worked once, then started failing after a restart or small local change.",
-          zh: "OpenClaw 曾经能运行一次，但在重启或小改动后开始失败。",
+          en: "Hermes Agent worked once, then started failing after a restart or small local change.",
+          zh: "Hermes Agent 曾经能运行一次，但在重启或小改动后开始失败。",
         },
         summary: {
           en: "Assume the environment changed underneath you and verify versions before debugging behavior.",
@@ -246,8 +246,8 @@ export const troubleshootTabs: TroubleshootTab[] = [
         slug: "fallback-model",
         title: { en: "Fallback model hides the real issue", zh: "回退模型掩盖了真实问题" },
         symptom: {
-          en: "OpenClaw still returns something, but quality, latency, or behavior changed sharply.",
-          zh: "OpenClaw 仍然有返回，但质量、延迟或行为突然变了很多。",
+          en: "Hermes Agent still returns something, but quality, latency, or behavior changed sharply.",
+          zh: "Hermes Agent 仍然有返回，但质量、延迟或行为突然变了很多。",
         },
         summary: {
           en: "You may be hitting a fallback path or degraded provider state rather than a workflow bug.",
@@ -400,8 +400,8 @@ export const troubleshootTabs: TroubleshootTab[] = [
           zh: "流程中的一部分能执行，但关键动作在接入其他工具时失败。",
         },
         summary: {
-          en: "This is often a permissions boundary issue rather than an OpenClaw reasoning issue.",
-          zh: "这通常是权限边界问题，不是 OpenClaw 推理能力本身的问题。",
+          en: "This is often a permissions boundary issue rather than an Hermes Agent reasoning issue.",
+          zh: "这通常是权限边界问题，不是 Hermes Agent 推理能力本身的问题。",
         },
         commonCauses: {
           en: ["Read permission exists but write permission is missing", "Integration token has narrow scope", "Bot not invited into the target workspace"],
@@ -444,12 +444,38 @@ export const troubleshootTabs: TroubleshootTab[] = [
         },
       },
       {
+        id: "gateway-not-working",
+        slug: "gateway-not-working",
+        title: { en: "Gateway is up, but the platform loop is still broken", zh: "Gateway 已启动，但平台回路还是不通" },
+        symptom: {
+          en: "Hermes responds in the CLI, yet messages from Telegram, Discord, or another platform never complete the round trip.",
+          zh: "Hermes 在 CLI 中能正常响应，但 Telegram、Discord 或其他平台的消息始终走不完整个闭环。",
+        },
+        summary: {
+          en: "This usually means the runtime is healthy while the platform-facing routing layer is not.",
+          zh: "这通常意味着运行时本身是健康的，但面向平台的路由层并不健康。",
+        },
+        commonCauses: {
+          en: ["Gateway process not attached to the correct config", "Webhook or platform callback is stale", "Platform auth is valid but routing target is wrong"],
+          zh: ["gateway 进程没有加载正确配置", "webhook 或平台回调已经失效", "平台鉴权有效，但路由目标配错了"],
+        },
+        checks: {
+          en: ["Verify Hermes still works in the CLI", "Restart `hermes gateway` with the expected environment", "Re-test one platform message and compare timestamps against gateway logs"],
+          zh: ["先确认 Hermes 在 CLI 中仍然正常", "用预期环境重新拉起 `hermes gateway`", "重发一条平台消息，并对照 gateway 日志时间戳"],
+        },
+        cta: {
+          label: { en: "Read the gateway guide", zh: "查看 gateway 指南" },
+          href: "/learn/hermes-gateway-guide",
+          variant: "secondary",
+        },
+      },
+      {
         id: "tooling-friction",
         slug: "tooling-friction",
         title: { en: "External tool friction blocks value", zh: "外部工具摩擦阻碍价值落地" },
         symptom: {
-          en: "OpenClaw itself works, but the surrounding toolchain makes the workflow too fragile to trust.",
-          zh: "OpenClaw 自身能工作，但外围工具链让整个流程脆弱到无法信任。",
+          en: "Hermes Agent itself works, but the surrounding toolchain makes the workflow too fragile to trust.",
+          zh: "Hermes Agent 自身能工作，但外围工具链让整个流程脆弱到无法信任。",
         },
         summary: {
           en: "When integration friction dominates, simplify the surrounding stack before adding more automation.",
@@ -496,8 +522,8 @@ export const troubleshootTabs: TroubleshootTab[] = [
           zh: ["排错从假设开始而不是从证据开始", "一次改了太多变量", "还没有先跑基线命令"],
         },
         checks: {
-          en: ["Run `openclaw status`", "Run `openclaw health`", "Read `openclaw logs --tail 120` before changing config"],
-          zh: ["执行 `openclaw status`", "执行 `openclaw health`", "改配置前先看 `openclaw logs --tail 120`"],
+          en: ["Run `hermes doctor`", "Restart with `hermes gateway` if you depend on a platform loop", "Read `tail -f ~/.hermes/logs/gateway.log` before changing config"],
+          zh: ["执行 `hermes doctor`", "如果依赖平台回路就重新拉起 `hermes gateway`", "改配置前先看 `tail -f ~/.hermes/logs/gateway.log`"],
         },
         cta: {
           label: { en: "Read advanced troubleshooting", zh: "查看进阶排错" },
@@ -555,6 +581,32 @@ export const troubleshootTabs: TroubleshootTab[] = [
           label: { en: "Back to symptom tabs", zh: "回到症状分类" },
           href: "#troubleshoot-directory",
           variant: "link",
+        },
+      },
+      {
+        id: "skills-not-loading",
+        slug: "skills-not-loading",
+        title: { en: "Skills are installed, but Hermes does not use them", zh: "Skills 已安装，但 Hermes 并没有真正用到" },
+        symptom: {
+          en: "A workflow that should invoke extra capability falls back to generic chat behavior or never reaches the expected action.",
+          zh: "本该调用额外能力的流程退回成了普通聊天行为，或者始终没有走到预期动作。",
+        },
+        summary: {
+          en: "The issue is often not model quality but capability registration, routing, or task framing.",
+          zh: "问题往往不在模型质量，而在能力注册、路由匹配或任务 framing。",
+        },
+        commonCauses: {
+          en: ["The expected skill is not actually available in the current session", "Task phrasing never triggers the intended capability", "The workflow assumes a Hub skill that was never verified locally"],
+          zh: ["当前会话里其实没有那个技能", "任务表达方式没有触发预期能力", "工作流默认依赖某个 Hub 技能，但本地从未验证过"],
+        },
+        checks: {
+          en: ["Confirm which skills Hermes can currently see", "Reduce the task to one explicit capability test", "Compare the live setup against the intended skills path in docs or config"],
+          zh: ["先确认 Hermes 当前能看到哪些技能", "把任务缩成一次明确的能力测试", "把现场配置和预期的技能路径逐项对照"],
+        },
+        cta: {
+          label: { en: "Review the skills guide", zh: "回看 skills 指南" },
+          href: "/skills",
+          variant: "secondary",
         },
       },
     ],

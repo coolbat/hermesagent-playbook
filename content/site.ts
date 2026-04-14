@@ -16,14 +16,14 @@ export type FaqEntry = {
 };
 
 export const homeHero = {
-  kicker: "OPENCLAW QUICK START",
+  kicker: "HERMES AGENT QUICK START",
   title: {
-    en: "Start OpenClaw from the homepage, not from a maze of docs.",
-    zh: "别从文档迷宫开始，直接在首页完成 OpenClaw 入门。",
+    en: "Start Hermes Agent from one launch path, not from a maze of docs.",
+    zh: "别从文档迷宫开始，直接用一条清晰路径完成 Hermes Agent 入门。",
   },
   summary: {
-    en: "A bilingual OpenClaw learning hub for beginners who want the shortest path from setup to a real workflow.",
-    zh: "一个面向新手的 OpenClaw 双语学习站，目标是把你从环境配置直接带到第一个真实工作流。",
+    en: "A bilingual Hermes Agent launch pad for teams that want the shortest path from install and provider setup to a real workflow.",
+    zh: "一个面向新手和小团队的 Hermes Agent 双语学习站，目标是把你从安装和模型配置直接带到第一条真实工作流。",
   },
   ctas: [
     {
@@ -48,20 +48,20 @@ export const homeHero = {
   },
   sideItems: [
     {
-      en: "Understand what OpenClaw is actually good at.",
-      zh: "先搞清楚 OpenClaw 真正擅长什么。",
+      en: "Understand what Hermes Agent is actually built to do.",
+      zh: "先搞清楚 Hermes Agent 真正擅长解决什么问题。",
     },
     {
-      en: "Install the minimal viable setup and verify it works.",
-      zh: "完成最小可用安装，并验证它真的能跑。",
+      en: "Install the shortest working setup and verify one provider.",
+      zh: "完成最短可工作的安装路径，并验证一个模型 provider。",
     },
     {
-      en: "Connect one chat channel and send one successful test loop.",
-      zh: "接通一个聊天渠道，并跑通一次测试消息闭环。",
+      en: "Connect one channel or CLI loop and confirm the agent responds.",
+      zh: "接通一个消息渠道或 CLI 回路，确认 agent 能稳定响应。",
     },
     {
-      en: "Run one starter workflow that produces useful output.",
-      zh: "跑通一个能产出结果的入门工作流。",
+      en: "Run one starter workflow that produces an inspectable result.",
+      zh: "跑通一条能产出、能检查结果的入门工作流。",
     },
   ] satisfies LocalizedText[],
 };
@@ -72,23 +72,23 @@ export const quickStartIntro = {
     zh: "Quick Start",
   },
   summary: {
-    en: "This is the shortest beginner path we can recommend without pretending OpenClaw is simpler than it is.",
-    zh: "这是目前最短、同时不过度简化 OpenClaw 复杂度的新手路径。",
+    en: "This is the shortest beginner path we can recommend without pretending Hermes Agent is simpler than it is.",
+    zh: "这是目前最短、同时不过度简化 Hermes Agent 复杂度的新手路径。",
   },
 };
 
 export const quickStartEntries: QuickStartEntry[] = [
   {
-    id: "what-is-openclaw",
-    slug: "what-is-openclaw",
+    id: "what-is-hermes-agent",
+    slug: "what-is-hermes-agent",
     step: "01",
     title: {
-      en: "What Is OpenClaw",
-      zh: "什么是 OpenClaw",
+      en: "What Is Hermes Agent",
+      zh: "什么是 Hermes Agent",
     },
     summary: {
-      en: "Treat it as a workflow execution system, not just another AI chat shell.",
-      zh: "把它当成工作流执行系统，而不只是另一个 AI 聊天壳。",
+      en: "Treat it as an agent runtime with tools, skills, memory, and gateways, not just another AI chat shell.",
+      zh: "把它当成带工具、技能、记忆和网关能力的 agent 运行时，而不只是另一个 AI 聊天壳。",
     },
     bullets: {
       en: [
@@ -104,7 +104,7 @@ export const quickStartEntries: QuickStartEntry[] = [
     },
     cta: {
       label: { en: "Open step guide", zh: "查看步骤详解" },
-      href: "/quick-start/what-is-openclaw",
+      href: "/quick-start/what-is-hermes-agent",
       variant: "secondary",
     },
   },
@@ -113,23 +113,23 @@ export const quickStartEntries: QuickStartEntry[] = [
     slug: "deploy-install",
     step: "02",
     title: {
-      en: "Deploy / Install",
-      zh: "部署 / 安装",
+      en: "Install and Configure",
+      zh: "安装与配置",
     },
     summary: {
-      en: "Pick the simplest path that lets you verify the system quickly.",
-      zh: "选择最容易验证成功的路径，而不是一开始就追求完整架构。",
+      en: "Take the official install path, then verify one provider and one healthy CLI session.",
+      zh: "先走官方安装路径，再验证一个 provider 和一条健康的 CLI 会话。",
     },
     bullets: {
       en: [
-        "Start local if you are still learning the system.",
-        "Use one model provider first and verify credentials early.",
-        "Do not add optional services before a basic health check passes.",
+        "Use the official installer on macOS, Linux, or WSL2.",
+        "Run `hermes setup` or `hermes model` before adding extra surfaces.",
+        "Do not add messaging or voice until the base loop is healthy.",
       ],
       zh: [
-        "还在摸索阶段时，优先本地安装。",
-        "先接入一个模型服务，并尽早验证凭证。",
-        "在基础健康检查通过前，不要继续叠加可选服务。",
+        "优先使用官方安装脚本，在 macOS、Linux 或 WSL2 上落地。",
+        "先用 `hermes setup` 或 `hermes model` 验证 provider，再叠加其他能力。",
+        "基础链路健康之前，不要急着接消息渠道或语音能力。",
       ],
     },
     cta: {
@@ -147,19 +147,19 @@ export const quickStartEntries: QuickStartEntry[] = [
       zh: "连接聊天渠道",
     },
     summary: {
-      en: "Installation is not enough. The first real milestone is a working message loop.",
-      zh: "只装好还不够。真正的第一个里程碑，是跑通消息闭环。",
+      en: "Installation is not enough. The first real milestone is a working chat or gateway loop.",
+      zh: "只装好还不够。真正的第一个里程碑，是跑通聊天或 gateway 消息闭环。",
     },
     bullets: {
       en: [
-        "Choose one easy first channel such as Telegram or Feishu.",
-        "Send one test message and confirm the bot responds.",
-        "If the bot stays silent, debug the channel before adding skills.",
+        "Start with the CLI, then add Telegram, Discord, or another supported platform.",
+        "Use one clean test message and confirm the agent responds end to end.",
+        "If the bot stays silent, fix the loop before adding more skills or automation.",
       ],
       zh: [
-        "先选一个简单渠道，比如 Telegram 或飞书。",
-        "发送一次测试消息，确认机器人有响应。",
-        "如果机器人沉默，先把渠道问题查清，再装技能。",
+        "先从 CLI 验证，再接 Telegram、Discord 或其他支持的平台。",
+        "用一条干净测试消息确认 agent 能完整走通输入到输出。",
+        "如果机器人沉默，先修复闭环，不要急着继续堆技能和自动化。",
       ],
     },
     cta: {
@@ -177,19 +177,19 @@ export const quickStartEntries: QuickStartEntry[] = [
       zh: "运行入门工作流",
     },
     summary: {
-      en: "Do one practical workflow before you optimize anything.",
-      zh: "先跑通一个实用工作流，再谈优化和扩展。",
+      en: "Do one practical Hermes workflow before you optimize tools, voice, or parallel agents.",
+      zh: "先跑通一条实际有用的 Hermes 工作流，再谈工具扩展、语音或多 agent。",
     },
     bullets: {
       en: [
-        "Pick a workflow with short feedback loops.",
-        "Prefer outputs you can inspect quickly, such as briefings or summaries.",
-        "Keep scope small enough that failure is diagnosable.",
+        "Pick a workflow with short feedback loops and clear outputs.",
+        "Prefer recipes that end in a summary, note, alert, or draft you can inspect quickly.",
+        "Keep scope small enough that provider, skill, and routing failures stay diagnosable.",
       ],
       zh: [
-        "先选反馈周期短的工作流。",
-        "优先选择易检查结果的任务，比如简报和摘要。",
-        "把范围收小到出了问题也能快速定位。",
+        "优先选反馈周期短、结果清晰的工作流。",
+        "先做容易检查结果的产出，比如摘要、笔记、告警或草稿。",
+        "把范围收小到 provider、skill、路由出问题时也能快速定位。",
       ],
     },
     cta: {
@@ -207,19 +207,19 @@ export const quickStartEntries: QuickStartEntry[] = [
       zh: "基础排错",
     },
     summary: {
-      en: "Most first-run failures are verification failures, not mysterious platform bugs.",
-      zh: "多数首次运行失败，本质上都是验证没做完，而不是神秘平台 bug。",
+      en: "Most first-run failures come from provider setup, gateway wiring, or capability boundaries, not mysterious platform bugs.",
+      zh: "多数首次运行失败，本质上都来自 provider 配置、gateway 接线或能力边界，而不是神秘平台 bug。",
     },
     bullets: {
       en: [
-        "Check channel pairing, process status, and API credentials first.",
-        "Read logs before changing multiple variables at once.",
-        "Route back into setup or templates once the symptom is clear.",
+        "Check provider credentials, process health, and gateway status first.",
+        "Use `hermes doctor` and logs before changing multiple variables at once.",
+        "Once the symptom is clear, route back into setup or workflow design.",
       ],
       zh: [
-        "先查渠道配对、进程状态和 API 凭证。",
-        "先看日志，不要一次改一堆变量。",
-        "确认症状后，再回到 setup 或模板路径继续推进。",
+        "先查 provider 凭证、进程健康状态和 gateway 运行情况。",
+        "先用 `hermes doctor` 和日志缩小范围，不要一次改一堆变量。",
+        "确认症状后，再回到 setup 或工作流设计路径继续推进。",
       ],
     },
     cta: {
@@ -236,15 +236,15 @@ export const learnPreview = {
     zh: "在 Learn 里继续深入",
   },
   summary: {
-    en: "After Quick Start, Learn becomes the resource hub for setup strategy, workflow design, Chinese ecosystem guidance, and advanced recovery paths.",
-    zh: "完成 Quick Start 后，Learn 会承担更深层的学习任务，包括 setup 策略、工作流设计、中文生态指导和进阶排错。",
+    en: "After Quick Start, Learn becomes the resource hub for providers, skills, gateway patterns, workspace rules, and advanced recovery paths.",
+    zh: "完成 Quick Start 后，Learn 会承担更深层的学习任务，包括 provider、技能、gateway 模式、工作区规则和进阶排错。",
   },
   cards: [
     {
       title: { en: "Foundations", zh: "基础认知" },
       summary: {
-        en: "Understand where OpenClaw creates leverage and where it does not.",
-        zh: "理解 OpenClaw 的优势边界，知道它该做什么、不该做什么。",
+        en: "Understand where Hermes Agent creates leverage and where chat alone is enough.",
+        zh: "理解 Hermes Agent 的优势边界，知道什么时候该上 agent，什么时候聊天就够了。",
       },
     },
     {

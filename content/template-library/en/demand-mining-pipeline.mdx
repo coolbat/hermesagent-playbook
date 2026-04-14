@@ -44,7 +44,7 @@ Start with 10–20 roots. The pipeline expands each one automatically.
 
 **Step 2: Configure the cron job**
 
-Add this to your `openclaw.json` crons section:
+Add this to your `~/.hermes/config.yaml` crons section:
 
 ```json
 {
@@ -63,9 +63,9 @@ Add this to your `openclaw.json` crons section:
 **Step 3: Install required skills**
 
 ```bash
-clawhub install search-web
-clawhub install web-fetch
-clawhub install summarize
+/skills search research
+/skills search web
+/skills install <the search and fetch skills your workflow needs>
 ```
 
 ## What good output looks like

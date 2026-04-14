@@ -1,8 +1,8 @@
-# OpenClaw Content-First MVP Implementation Plan
+# Hermes Agent Content-First MVP Implementation Plan
 
 > **For agentic workers:** REQUIRED: Use superpowers:subagent-driven-development (if subagents available) or superpowers:executing-plans to implement this plan. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Ship a launchable content-first OpenClaw website MVP with `Learn` as the primary journey and with usable `Templates` and `Troubleshoot` support sections.
+**Goal:** Ship a launchable content-first Hermes Agent website MVP with `Learn` as the primary journey and with usable `Templates` and `Troubleshoot` support sections.
 
 **Architecture:** Keep the site static and App Router based, move repeated content into typed data modules, and rebuild the four top-level pages around a clearer content hierarchy. Preserve the current theme and bilingual preference controls while improving metadata, page structure, and release readiness.
 

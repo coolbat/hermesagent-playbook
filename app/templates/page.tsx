@@ -14,26 +14,26 @@ export async function generateMetadata(): Promise<Metadata> {
   return createPageMetadata({
     locale,
     title: {
-      en: "OpenClaw Templates Directory",
-      zh: "OpenClaw 模板目录",
+      en: "Hermes Agent Templates Directory",
+      zh: "Hermes Agent 模板目录",
     },
     description: {
-      en: "Browse OpenClaw templates by work goal: briefings, content production, team collaboration, research analysis, monitoring alerts, and Chinese ecosystem workflows.",
-      zh: "按工作目标浏览 OpenClaw 模板：信息简报、内容生产、团队协作、调研分析、监控告警和中文生态工作流。",
+      en: "Browse Hermes Agent templates by work goal: briefings, content production, team collaboration, research analysis, monitoring alerts, and Chinese ecosystem workflows.",
+      zh: "按工作目标浏览 Hermes Agent 模板：信息简报、内容生产、团队协作、调研分析、监控告警和中文生态工作流。",
     },
     path: "/templates",
     keywords: {
       en: [
-        "OpenClaw templates",
-        "OpenClaw starter workflows",
-        "OpenClaw automation examples",
-        "OpenClaw first workflow",
+        "Hermes Agent templates",
+        "Hermes Agent starter workflows",
+        "Hermes Agent automation examples",
+        "Hermes Agent first workflow",
       ],
       zh: [
-        "OpenClaw 模板",
-        "OpenClaw 起步工作流",
-        "OpenClaw 自动化示例",
-        "OpenClaw 第一个工作流",
+        "Hermes Agent 模板",
+        "Hermes Agent 起步工作流",
+        "Hermes Agent 自动化示例",
+        "Hermes Agent 第一个工作流",
       ],
     },
   });
@@ -49,13 +49,13 @@ export default async function TemplatesPage() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            name: locale === "zh" ? "OpenClaw 起步模板库" : "Starter Templates for OpenClaw",
+            name: locale === "zh" ? "Hermes Agent 起步模板库" : "Starter Templates for Hermes Agent",
             url: absoluteLocalizedUrl("/templates", locale),
             inLanguage: locale === "zh" ? "zh-CN" : "en",
             description:
               locale === "zh"
-                ? "按工作目标浏览 OpenClaw 模板，结合难度、耗时、风险和渠道建议，选择更贴合当前场景的起步工作流。"
-                : "Browse OpenClaw templates by work goal, with difficulty, time, risk, and channel guidance to help you choose a practical starter workflow.",
+                ? "按工作目标浏览 Hermes Agent 模板，结合难度、耗时、风险和渠道建议，选择更贴合当前场景的起步工作流。"
+                : "Browse Hermes Agent templates by work goal, with difficulty, time, risk, and channel guidance to help you choose a practical starter workflow.",
             isPartOf: {
               "@type": "WebSite",
               name: siteName,

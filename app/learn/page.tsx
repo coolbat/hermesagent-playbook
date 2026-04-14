@@ -14,26 +14,26 @@ export async function generateMetadata(): Promise<Metadata> {
   return createPageMetadata({
     locale,
     title: {
-      en: "Learn Hub for OpenClaw",
-      zh: "OpenClaw Learn 资源中心",
+      en: "Learn Hub for Hermes Agent",
+      zh: "Hermes Agent Learn 资源中心",
     },
     description: {
-      en: "Use the Learn hub for OpenClaw foundations, setup strategy, workflow design, Chinese ecosystem guidance, advanced troubleshooting, and practical usage tips.",
-      zh: "在 Learn 中继续补齐 OpenClaw 基础认知、setup 策略、工作流设计、中文生态适配、进阶排错和日常使用技巧。",
+      en: "Use the Learn hub for Hermes Agent foundations, setup strategy, workflow design, Chinese ecosystem guidance, advanced troubleshooting, and practical usage tips.",
+      zh: "在 Learn 中继续补齐 Hermes Agent 基础认知、setup 策略、工作流设计、中文生态适配、进阶排错和日常使用技巧。",
     },
     path: "/learn",
     keywords: {
       en: [
-        "OpenClaw learn hub",
-        "OpenClaw setup guide",
-        "OpenClaw workflow design",
-        "OpenClaw Chinese ecosystem",
+        "Hermes Agent learn hub",
+        "Hermes Agent setup guide",
+        "Hermes Agent workflow design",
+        "Hermes Agent Chinese ecosystem",
       ],
       zh: [
-        "OpenClaw Learn",
-        "OpenClaw setup 指南",
-        "OpenClaw 工作流设计",
-        "OpenClaw 中文生态",
+        "Hermes Agent Learn",
+        "Hermes Agent setup 指南",
+        "Hermes Agent 工作流设计",
+        "Hermes Agent 中文生态",
       ],
     },
   });
@@ -49,13 +49,13 @@ export default async function LearnPage() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            name: locale === "zh" ? "OpenClaw Learn 资源中心" : "Learn Hub for OpenClaw",
+            name: locale === "zh" ? "Hermes Agent Learn 资源中心" : "Learn Hub for Hermes Agent",
             url: absoluteLocalizedUrl("/learn", locale),
             inLanguage: locale === "zh" ? "zh-CN" : "en",
             description:
               locale === "zh"
-                ? "在 Learn 中继续补齐更深入的 OpenClaw 基础认知、setup 策略、工作流设计、中文生态适配、进阶排错和日常使用技巧。"
-                : "Use the Learn hub for deeper OpenClaw foundations, setup strategy, workflow design, Chinese ecosystem guidance, advanced troubleshooting, and practical usage tips.",
+                ? "在 Learn 中继续补齐更深入的 Hermes Agent 基础认知、setup 策略、工作流设计、中文生态适配、进阶排错和日常使用技巧。"
+                : "Use the Learn hub for deeper Hermes Agent foundations, setup strategy, workflow design, Chinese ecosystem guidance, advanced troubleshooting, and practical usage tips.",
             isPartOf: {
               "@type": "WebSite",
               name: siteName,

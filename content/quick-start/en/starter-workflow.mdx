@@ -1,91 +1,72 @@
 ---
 title: "Run a Starter Workflow"
-summary: "Pick a workflow with clear output, short feedback loops, and failures you can diagnose."
-readingTime: "7 min"
+summary: "Pick one short-loop Hermes workflow that gives you a visible result you can inspect in minutes."
+readingTime: "8 min"
 ---
 
-The goal of your first workflow is not to impress anyone. It is to prove that OpenClaw can reliably produce a result you can inspect quickly. Think of it as a test track, not the final system.
+The first workflow is where Hermes stops being "installed software" and starts becoming a useful system.
 
-## Good first-workflow traits
+## Pick a workflow with low ambiguity
 
-The best starter workflows are:
+Good starter workflows share the same properties:
 
-- short feedback loop
+- short input
+- short runtime
 - obvious output
-- easy to rerun
-- narrow enough to debug
+- easy manual review
 
-Examples include:
+Examples:
 
-- daily briefings
-- summaries
-- structured notes
-- simple dispatch tasks
+- summarize a link
+- turn notes into a structured recap
+- generate a daily briefing from a small source set
+- route a short status update into one channel
 
-If you are unsure what to choose, pick something with simple input, obvious output, and low validation cost. A good example is sending a link and asking for a summary back in the channel, or generating a short daily digest on a fixed schedule.
+## Why this matters
 
-## What you are really proving
+Your goal is not to prove Hermes can do everything. Your goal is to prove one entire loop works:
 
-You are not trying to build the final system yet. You are proving that:
+1. input arrives
+2. Hermes uses the right capabilities
+3. output lands in the right place
+4. you can inspect the result
 
-- the trigger arrives
-- the logic runs
-- the output lands somewhere useful
+That tells you much more than a long, flashy demo.
 
-> “Useful and repeatable” matters more than “impressive.”
+## Start with built-in capability before optional complexity
 
-## A solid starter workflow should pass this checklist
+Before you install extra skills from the Hub, ask whether built-in Hermes behavior is already enough for the first test. Many first workflows can be validated with:
 
-Before you expand it, check whether the workflow has these properties:
+- the CLI
+- one configured provider
+- a narrow prompt
+- a known output path
 
-- it depends on only a small number of prerequisites
-- it does not require several external systems to succeed at once
-- success is obvious at a glance
-- when it fails, you know where to look first
-- you can rerun it several times in one day
+Optional skills make more sense once you know exactly what gap you are filling.
 
-If a workflow needs four external APIs, two group chats, three skills, and one browser login state just to succeed once, it is not a good first workflow.
+## What to review after the first run
 
-## Recommended first task types
+After the workflow returns a result, inspect:
 
-At this stage, prefer work that is light, short, and observable:
+- Was the result actually useful?
+- Did Hermes use the right context?
+- Could you explain why it succeeded?
+- Would you know where to look if it failed next time?
 
-- summarize one article or page
-- turn a few links into a short briefing
-- read fixed input text and return structured bullet points
-- fetch a small amount of information from a fixed source and send it back
-- send one scheduled notification in a fixed format
+If you cannot answer the last two questions, the workflow is still too big.
 
-These are good starter tasks because success is clear, failure is clear, and they do not leave you wondering which subsystem broke.
+## A better first success metric
 
-## Do not start with these more ambitious patterns
+Do not ask "Was that impressive?"
 
-These can be powerful, but they are poor first workflows:
+Ask:
 
-- multi-agent collaboration systems
-- long automation chains across multiple SaaS tools
-- workflows that depend on rich long-term memory
-- content factories with dozens of steps
-- systems that require browser login state, complicated permissions, and multi-channel distribution
+- Can I run it again?
+- Can I debug it?
+- Can I tell where the output should go?
 
-Those are not bad goals. They just belong after you already have one small path working.
+That is the beginning of a reliable Hermes workflow practice.
 
-## Common beginner mistake
+## Next move
 
-Starting with a workflow that is too broad creates ambiguous failure. When everything is coupled, nothing is easy to fix. What you get is not proof of capability. You get a pile of uncertainty.
-
-Another common mistake is optimizing for demo value. A workflow that looks smart is not automatically a good starter workflow. The first one should build confidence and diagnostic clarity.
-
-## What to record once it works
-
-When your first workflow succeeds, record these three things:
-
-- what the trigger was
-- what successful output looked like
-- where you would look first if it failed
-
-That becomes your reference sample for future templates, skills, and scheduled tasks. When more complex flows break, you can always fall back to this shortest known-good path.
-
-## A better next move
-
-Once one starter workflow runs, you can either deepen your foundations in Learn or expand with Templates that match your goal. If it does not run yet, do not expand the scope. Make the workflow smaller first.
+Now read [Basic Troubleshooting](/quick-start/basic-troubleshooting) so your first failure does not turn into a blind rewrite of the whole setup.

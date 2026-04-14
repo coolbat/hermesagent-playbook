@@ -1,4 +1,4 @@
-# OpenClaw101 Home / Learn Information Architecture Design
+# Hermes Agent Home / Learn Information Architecture Design
 
 **Date:** 2026-03-16
 
@@ -6,7 +6,7 @@
 
 This design refines the MVP information architecture so the site has a clearer first-run experience and less navigational friction. The main change is moving the primary beginner onboarding flow out of `Learn` and into the homepage as a mixed-format `Quick Start` section.
 
-The homepage becomes the main SEO landing page for OpenClaw beginner intent and the fastest path to a first successful run. The `Learn` page shifts from "start here" onboarding into a structured resource hub for deeper study.
+The homepage becomes the main SEO landing page for Hermes Agent beginner intent and the fastest path to a first successful run. The `Learn` page shifts from "start here" onboarding into a structured resource hub for deeper study.
 
 ## Why This Change
 
@@ -33,8 +33,8 @@ The revised structure reduces that friction:
 ## Product Goals
 
 - Reduce page-depth before users begin learning
-- Make the homepage the primary SEO landing page for beginner OpenClaw queries
-- Help a new visitor reach a first successful OpenClaw workflow quickly
+- Make the homepage the primary SEO landing page for beginner Hermes Agent queries
+- Help a new visitor reach a first successful Hermes Agent workflow quickly
 - Separate onboarding, deeper learning, templates, and troubleshooting into clearer roles
 
 ## Information Architecture
@@ -66,7 +66,7 @@ The homepage is:
 
 Its job is to:
 
-- explain what OpenClaw is
+- explain what Hermes Agent is
 - explain what this site helps users accomplish
 - move users directly into a 30-minute beginner path
 - route users onward to deeper learning, templates, or troubleshooting
@@ -142,7 +142,7 @@ Keeping it as a highlighted button preserves emphasis without muddying structure
 
 ## Homepage SEO Role
 
-The homepage should intentionally target beginner-intent OpenClaw queries, including themes such as:
+The homepage should intentionally target beginner-intent Hermes Agent queries, including themes such as:
 
 - `open claw`
 - `open claw tutorial`
@@ -165,7 +165,7 @@ This affects homepage content strategy:
 
 `Quick Start` is the central homepage module.
 
-Its purpose is to help a beginner complete the minimum successful OpenClaw journey in about 30 minutes.
+Its purpose is to help a beginner complete the minimum successful Hermes Agent journey in about 30 minutes.
 
 It should use a mixed structure:
 
@@ -178,7 +178,7 @@ This keeps the onboarding path shallow while preserving room for expansion.
 
 By the end of this section, a new user should know:
 
-- what OpenClaw is
+- what Hermes Agent is
 - how to install it
 - how to connect a chat channel
 - how to run one starter workflow
@@ -188,13 +188,13 @@ By the end of this section, a new user should know:
 
 The section contains five cards or content blocks.
 
-### 1. What Is OpenClaw
+### 1. What Is Hermes Agent
 
 Purpose:
 
 - establish the correct mental model
 
-This block should explain that OpenClaw is:
+This block should explain that Hermes Agent is:
 
 - not just a chatbot
 - an execution system for repeatable workflows

@@ -2,7 +2,7 @@
 
 ## Goal
 
-Refine the homepage into an OpenClaw onboarding product homepage: a page that feels like a high-quality AI/SaaS entry point while preserving the editorial clarity expected from a tutorial site.
+Refine the homepage into an Hermes Agent onboarding product homepage: a page that feels like a high-quality AI/SaaS entry point while preserving the editorial clarity expected from a tutorial site.
 
 The homepage should help new users answer four questions quickly:
 
@@ -19,7 +19,7 @@ It should feel like:
 
 - a product onboarding hub
 - a tutorial-first resource center
-- a credible OpenClaw entry point for beginners
+- a credible Hermes Agent entry point for beginners
 
 It should not feel like:
 
@@ -59,7 +59,7 @@ The hero should be a product entry point, not just a branding statement.
 
 The left side should clearly establish:
 
-- what OpenClaw Playbook is
+- what Hermes Agent Playbook is
 - the primary user type
 - the first recommended action
 - the value of starting here instead of digging through scattered docs

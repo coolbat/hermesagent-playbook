@@ -1,0 +1,34 @@
+---
+title: Gateway is up, but the platform loop is still broken
+summary: Hermes responds in the CLI, yet Telegram, Discord, or another platform never completes the round trip.
+readingTime: 6 min
+---
+
+## What this usually means
+
+The base runtime is probably healthy. The failure is more likely in the platform-facing routing layer.
+
+## First recovery loop
+
+Run the narrowest comparison possible:
+
+1. confirm Hermes still responds in the CLI
+2. restart `hermes gateway`
+3. send one clean platform message
+4. compare the send time with the gateway log window
+
+If the CLI works and the platform does not, keep your attention on routing and platform state.
+
+## What to verify next
+
+Check these in order:
+
+- the gateway is reading the expected environment
+- the platform callback or webhook is current
+- the destination account or route is correct
+
+Do not redesign the workflow until those are clear.
+
+## If the issue persists
+
+Reduce the test surface to one platform, one account, one message, and one expected reply. A broader test only adds noise.

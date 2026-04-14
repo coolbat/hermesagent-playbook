@@ -14,17 +14,17 @@ export function SiteFooter() {
     <footer className="container footer">
       <div className="footer-top">
         <div className="footer-brand">
-          <strong>OpenClaw Playbook</strong>
+          <strong>Hermes Agent Playbook</strong>
           <CopyPair
             en={
               <p>
-                Independent bilingual onboarding and learning content for people who want a cleaner
-                path from setup to a first useful OpenClaw workflow.
+                Independent bilingual onboarding and workflow guidance for teams that want a
+                cleaner path from first install to a dependable Hermes Agent loop.
               </p>
             }
             zh={
               <p>
-                一个独立维护的双语 OpenClaw 入门站，目标是把用户从 setup 带到第一个真正有用的工作流。
+                一个独立维护的双语 Hermes Agent 入门站，目标是把用户从安装与配置带到第一条稳定可复用的工作流。
               </p>
             }
           />
@@ -49,13 +49,13 @@ export function SiteFooter() {
       <CopyPair
         en={
           <p className="footer-note">
-            This site is educational content, not a guarantee of platform behavior, service uptime,
-            or legal/compliance advice.
+            This site is educational content for Hermes Agent users. It does not guarantee platform
+            behavior, service uptime, or legal and compliance outcomes.
           </p>
         }
         zh={
           <p className="footer-note">
-            本站内容主要用于学习与上手，不构成平台行为保证、服务可用性承诺或法律/合规建议。
+            本站内容主要用于 Hermes Agent 学习与上手，不构成平台行为保证、服务可用性承诺或法律、合规建议。
           </p>
         }
       />

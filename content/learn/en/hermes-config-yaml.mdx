@@ -1,0 +1,63 @@
+---
+title: Understand `config.yaml` Without Guessing
+summary: Use the Hermes configuration file as a deliberate control surface for providers, agents, tools, and runtime behavior.
+readingTime: 10 min
+---
+
+The configuration file is not just a place where settings live. In Hermes, it is the control surface that determines how providers, agents, tools, and runtime behavior connect.
+
+## What this file should do for you
+
+When `config.yaml` is healthy, you should be able to answer:
+
+- which provider Hermes is using
+- which agent defaults are active
+- which tools or integrations are enabled
+- which runtime behavior is intentional versus accidental
+
+If the file feels magical, it is too opaque.
+
+## Read it by layers
+
+A practical way to reason about `config.yaml` is from top to bottom:
+
+1. provider and model defaults
+2. agent-level behavior
+3. tool and integration configuration
+4. optional runtime features such as memory or delegation
+
+Do not edit five layers at once. Configuration drift becomes much harder to diagnose when several concerns change together.
+
+## Use it as a source of truth
+
+The biggest mistake is letting your real setup live half in shell state and half in scattered notes. A clean configuration file should make the intended runtime legible.
+
+That does not mean everything belongs in the file. Secrets still need proper handling. But the runtime shape should be easy to read.
+
+## Good config behavior
+
+Good configuration is:
+
+- narrow
+- explainable
+- consistent with the workflow you are actually running
+
+Bad configuration is:
+
+- copied from another environment
+- full of options you are not using
+- changed every time something feels wrong
+
+## When to edit config
+
+Edit `config.yaml` only when you can name the reason clearly:
+
+- "I need one different provider default"
+- "I need to enable one runtime capability"
+- "I need to adjust one agent behavior"
+
+If the reason is just "something seems off," diagnose first.
+
+## Next move
+
+If you are expanding Hermes beyond local defaults, [Hermes MCP Guide](/learn/hermes-mcp-guide) is the next useful page.

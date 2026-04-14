@@ -1,91 +1,77 @@
 ---
 title: "Basic Troubleshooting"
-summary: "Most first-run failures are missing verification steps, not mysterious platform bugs."
-readingTime: "6 min"
+summary: "Use provider checks, doctor diagnostics, and symptom-first reasoning before changing everything at once."
+readingTime: "8 min"
 ---
 
-When the first run fails, the fastest path is to narrow the symptom instead of changing multiple variables at once. For beginners, the biggest risk is usually not a deep bug. It is turning a simple problem into a complicated one.
+Most early Hermes failures are not mysterious. They usually belong to one of four layers:
 
-## First checks
+- installation
+- provider configuration
+- gateway or platform routing
+- workflow scope
 
-Start with the shortest verification loop:
+## The shortest recovery loop
 
-- Is the process running?
-- Is the model credential valid?
-- Is the channel paired correctly?
-- Do logs show a clear error?
+When something breaks, run the shortest useful sequence first:
 
-Those four questions cover most Quick Start failures. Answer them first before you try deeper reasoning.
+```bash
+hermes setup
+hermes model
+hermes doctor
+```
 
-## How to avoid random debugging
+If Hermes works in the CLI but not in a platform, add:
 
-Use this order:
+```bash
+hermes gateway
+```
 
-1. confirm the visible symptom
-2. inspect the nearest log or health signal
-3. change one variable
-4. retry once
+This separates "the runtime is broken" from "the platform path is broken."
 
-That sequence usually reveals whether you are dealing with setup, channel, credential, or workflow scope.
+## Symptom-first debugging
 
-The most valuable thing in troubleshooting is not "knowing more." It is keeping the order stable. Once your order is stable, it becomes much easier to tell which layer the problem belongs to.
+Start from the symptom, not from your favorite guess.
 
-## Classify the problem by layer first
+Common examples:
 
-Most first-run issues fall into one of these layers:
+- no CLI response: check install and provider
+- CLI works, platform silent: check gateway and platform routing
+- replies are weak or unstable: check model selection and workflow scope
+- the wrong action happens: inspect skills, rules, and prompt boundaries
 
-- installation: commands do not run, services do not start, environment is incomplete
-- model: invalid key, wrong provider config, actual model call differs from what you expected
-- channel: the bot does not receive messages, permissions are missing, account binding is incomplete
-- workflow: the trigger arrives, but the flow is too broad or depends on too many things
+## What not to do
 
-You do not need to know how to fix every layer immediately. You do need to know which layer you are in.
+Avoid these early-debug mistakes:
 
-## What the shortest troubleshooting loop looks like
+- switching providers and channels at the same time
+- installing new skills during diagnosis
+- changing prompts before proving the base loop
+- turning one failure into a full rebuild
 
-If you do not know where to start, go back to this loop:
+Each extra variable makes the signal worse.
 
-1. check whether the service is alive
-2. inspect recent logs for hard errors
-3. reproduce the issue with the smallest possible action
-4. change exactly one variable and retry
-5. see whether the problem moved
+## Use Hermes diagnostics before theory
 
-"Did the problem move?" is an important question. If you started with "no message came back" and now you have "the message came back but the content failed," that is progress. It means you cleared one layer and reached the next one.
+If Hermes gives you a diagnostic tool, use it before you speculate. Official guidance is intentionally operational:
 
-## Common beginner mistake
+- confirm environment state
+- confirm provider state
+- confirm routing state
+- only then redesign the workflow
 
-Users often react to failure by changing the prompt, the model, the environment, and the skills all at once. That destroys the only useful evidence.
+That order saves time.
 
-Another common mistake is jumping to conclusions too early:
+## When to go deeper
 
-- the bot is silent, so the model must be broken
-- the model errors once, so it must be a platform bug
-- one skill fails, so the whole system must be unstable
+Leave Quick Start once you can describe the failure precisely:
 
-At the Quick Start stage, many failures are just incomplete validation. They do not need to be interpreted as "the platform is broken."
+- "provider auth fails"
+- "gateway runs but Telegram is silent"
+- "workflow returns low-value output"
 
-## When to stop guessing and switch to a focused guide
+At that point the problem is specific enough for the Troubleshoot and Learn libraries to help.
 
-If you can already describe the issue in a sentence like one of these, stop doing generic troubleshooting:
+## Next move
 
-- "The process is alive, but Feishu messages are not arriving."
-- "The channel works, but provider authentication fails."
-- "Basic chat replies work, but the starter workflow fails on trigger."
-- "The same command worked yesterday, and today only one skill fails."
-
-Once the symptom is specific, you should move into the matching Troubleshoot path instead of staying in broad Quick Start diagnosis.
-
-## The one habit that matters most
-
-For every troubleshooting attempt, try to leave behind these three pieces of information:
-
-- what action you took
-- what symptom you saw
-- what variable you changed
-
-That sharply reduces the "I tried a lot of things but cannot remember what actually changed" problem. Many debugging failures are not about difficulty. They are about poor records.
-
-## A better next move
-
-After you identify the symptom clearly, jump into the dedicated Troubleshoot path and continue from the matching recovery guide. The role of Quick Start is to move you from "I have no idea" to "I know which layer is failing."
+If you know the symptom, jump to the matching page in [Troubleshoot](/troubleshoot). If you need stronger system understanding, continue in [Learn](/learn).

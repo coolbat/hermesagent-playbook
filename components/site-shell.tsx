@@ -38,7 +38,7 @@ export async function SiteShell({
         <div className="container nav">
           <div className="nav-left">
             <LocalizedLink className="brand" href="/">
-              OpenClaw Playbook
+              Hermes Agent Playbook
             </LocalizedLink>
             <nav className="menu">
               <LocalizedLink className="quick-start-nav btn primary" href="/#quick-start">

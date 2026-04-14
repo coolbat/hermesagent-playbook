@@ -1,4 +1,4 @@
-# OpenClaw101 Home Quick Start MVP Implementation Plan
+# Hermes Agent Home Quick Start MVP Implementation Plan
 
 > **For agentic workers:** REQUIRED: Use superpowers:subagent-driven-development (if subagents available) or superpowers:executing-plans to implement this plan. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -140,7 +140,7 @@ It does not cover:
 
 - [x] Rebuild the homepage order to `Hero -> Quick Start -> Learn Preview -> Templates Preview -> Troubleshoot Preview -> FAQ`.
 - [x] Remove or downgrade the old "choose your path" block if it competes with the new Quick Start-first structure.
-- [x] Ensure the hero introduces OpenClaw clearly for beginner-intent SEO and routes users into `#quick-start`.
+- [x] Ensure the hero introduces Hermes Agent clearly for beginner-intent SEO and routes users into `#quick-start`.
 - [x] Add enough explanatory copy below the hero to support the homepage's search-intent role without making it feel like a long article.
 - [x] Run `npm run build` after the homepage restructure.
 
@@ -152,7 +152,7 @@ It does not cover:
 - Modify: `app/globals.css`
 
 - [x] Add a `Quick Start` section anchored with a stable `id`, such as `quick-start`.
-- [x] Render the five approved cards: `What Is OpenClaw`, `Deploy / Install`, `Connect a Chat Channel`, `Run a Starter Workflow`, `Basic Troubleshooting`.
+- [x] Render the five approved cards: `What Is Hermes Agent`, `Deploy / Install`, `Connect a Chat Channel`, `Run a Starter Workflow`, `Basic Troubleshooting`.
 - [x] Use the approved short-form bilingual UI copy for each card.
 - [x] Make the section readable on mobile and desktop without creating excessive scroll friction or card density.
 - [ ] Run `npm run build`, then inspect the homepage in `npm run dev` at narrow mobile and desktop widths.
@@ -223,7 +223,7 @@ It does not cover:
 - Modify: `app/troubleshoot/page.tsx`
 
 - [x] Add reusable metadata helpers for titles, descriptions, and default Open Graph values.
-- [x] Update homepage metadata to target OpenClaw beginner-intent search themes.
+- [x] Update homepage metadata to target Hermes Agent beginner-intent search themes.
 - [x] Update Learn metadata to reflect its new resource-hub role.
 - [x] Make Templates and Troubleshoot metadata match their user intent rather than generic site wording.
 - [x] Run `npm run build` and confirm metadata changes do not break the app.

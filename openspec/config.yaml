@@ -1,8 +1,8 @@
 schema: spec-driven
 
 context: |
-  Project: OpenClaw Playbook (openclaw101.space)
-  A bilingual (EN/ZH) learning platform for OpenClaw — helping users go from
+  Project: Hermes Agent Playbook (hermes-agent-playbook.space)
+  A bilingual (EN/ZH) learning platform for Hermes Agent — helping users go from
   "heard about it" to "deployed, running real automations, reusing templates,
   and avoiding security/cost pitfalls."
 
@@ -36,14 +36,14 @@ context: |
     - Bilingual layouts must feel intentional for both languages
 
   Domain:
-    - OpenClaw is an AI agent platform users self-host
+    - Hermes Agent is an AI agent platform users self-host
     - Key concepts: skills, workflows, channels, daemon, pairing, admin ID
     - Users deploy via Docker/VPS/local, connect via Telegram/Discord/Feishu/DingTalk
     - Site sections: Home, Learn, Templates, Troubleshoot, Quick Start
     - Future sections: Skills, Trust Center, Resources, Community
 
-  PRD reference: openclaw101教程站需求文档.md (root)
-  Copy reference: openclaw101网站高保真文案（home + Learn + Templates + Troubleshoot）.md (root)
+  PRD reference: hermes-agent-playbook教程站需求文档.md (root)
+  Copy reference: hermes-agent-playbook网站高保真文案（home + Learn + Templates + Troubleshoot）.md (root)
   Design context: .impeccable.md (root)
 
 rules:

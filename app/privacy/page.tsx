@@ -17,13 +17,13 @@ export async function generateMetadata(): Promise<Metadata> {
       zh: "隐私政策",
     },
     description: {
-      en: "Privacy policy for OpenClaw Playbook, including local preference storage and general site-operation data handling.",
-      zh: "OpenClaw Playbook 的隐私政策，说明本地偏好存储以及站点运行层面的基础数据处理方式。",
+      en: "Privacy policy for Hermes Agent Playbook, including local preference storage and general site-operation data handling.",
+      zh: "Hermes Agent Playbook 的隐私政策，说明本地偏好存储以及站点运行层面的基础数据处理方式。",
     },
     path: "/privacy",
     keywords: {
-      en: ["OpenClaw Playbook privacy", "site privacy policy"],
-      zh: ["OpenClaw Playbook 隐私", "站点隐私政策"],
+      en: ["Hermes Agent Playbook privacy", "site privacy policy"],
+      zh: ["Hermes Agent Playbook 隐私", "站点隐私政策"],
     },
   });
 }
@@ -43,8 +43,8 @@ export default async function PrivacyPage() {
             url: absoluteLocalizedUrl("/privacy", locale),
             description:
               locale === "zh"
-                ? "OpenClaw Playbook 的隐私政策。"
-                : "Privacy policy for OpenClaw Playbook.",
+                ? "Hermes Agent Playbook 的隐私政策。"
+                : "Privacy policy for Hermes Agent Playbook.",
             inLanguage: locale === "zh" ? "zh-CN" : "en",
             isPartOf: {
               "@type": "WebSite",
@@ -80,8 +80,8 @@ export default async function PrivacyPage() {
           zh: "这个站点如何处理基础数据。",
         }}
         summary={{
-          en: "OpenClaw Playbook is a content site. It stores only minimal preference data in the browser and does not currently offer user accounts.",
-          zh: "OpenClaw Playbook 目前是内容型站点。它只在浏览器里保存最少量的偏好设置，不提供用户账户系统。",
+          en: "Hermes Agent Playbook is a content site. It stores only minimal preference data in the browser and does not currently offer user accounts.",
+          zh: "Hermes Agent Playbook 目前是内容型站点。它只在浏览器里保存最少量的偏好设置，不提供用户账户系统。",
         }}
       />
 

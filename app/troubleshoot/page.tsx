@@ -14,26 +14,26 @@ export async function generateMetadata(): Promise<Metadata> {
   return createPageMetadata({
     locale,
     title: {
-      en: "Troubleshooting OpenClaw",
-      zh: "OpenClaw 排错指南",
+      en: "Troubleshooting Hermes Agent",
+      zh: "Hermes Agent 排错指南",
     },
     description: {
-      en: "Troubleshoot OpenClaw from symptoms first: fix bot silence, install failures, invalid credentials, and broken starter workflows.",
-      zh: "从症状出发排查 OpenClaw：机器人沉默、安装失败、凭证异常和入门工作流失效都先在这里缩小范围。",
+      en: "Troubleshoot Hermes Agent from symptoms first: fix bot silence, install failures, invalid credentials, and broken starter workflows.",
+      zh: "从症状出发排查 Hermes Agent：机器人沉默、安装失败、凭证异常和入门工作流失效都先在这里缩小范围。",
     },
     path: "/troubleshoot",
     keywords: {
       en: [
-        "OpenClaw troubleshooting",
-        "OpenClaw bot silent",
-        "OpenClaw install failed",
-        "OpenClaw status logs health",
+        "Hermes Agent troubleshooting",
+        "Hermes Agent bot silent",
+        "Hermes Agent install failed",
+        "Hermes Agent status logs health",
       ],
       zh: [
-        "OpenClaw 排错",
-        "OpenClaw 机器人沉默",
-        "OpenClaw 安装失败",
-        "OpenClaw 状态 日志 健康检查",
+        "Hermes Agent 排错",
+        "Hermes Agent 机器人沉默",
+        "Hermes Agent 安装失败",
+        "Hermes Agent 状态 日志 健康检查",
       ],
     },
   });
@@ -49,13 +49,13 @@ export default async function TroubleshootPage() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            name: locale === "zh" ? "OpenClaw 排错指南" : "Troubleshooting OpenClaw",
+            name: locale === "zh" ? "Hermes Agent 排错指南" : "Troubleshooting Hermes Agent",
             url: absoluteLocalizedUrl("/troubleshoot", locale),
             inLanguage: locale === "zh" ? "zh-CN" : "en",
             description:
               locale === "zh"
-                ? "从症状出发排查 OpenClaw：机器人沉默、安装失败、模型凭证异常和入门工作流失效都先在这里缩小问题范围。"
-                : "Troubleshoot OpenClaw from symptoms first: recover from bot silence, install failures, invalid model credentials, and broken starter workflows.",
+                ? "从症状出发排查 Hermes Agent：机器人沉默、安装失败、模型凭证异常和入门工作流失效都先在这里缩小问题范围。"
+                : "Troubleshoot Hermes Agent from symptoms first: recover from bot silence, install failures, invalid model credentials, and broken starter workflows.",
             isPartOf: {
               "@type": "WebSite",
               name: siteName,

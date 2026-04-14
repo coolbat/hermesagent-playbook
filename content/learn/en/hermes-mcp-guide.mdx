@@ -1,0 +1,59 @@
+---
+title: Hermes MCP Guide
+summary: Understand when MCP adds real leverage, how it differs from ordinary skills, and how to introduce it without destabilizing the base workflow.
+readingTime: 9 min
+---
+
+MCP is powerful precisely because it can widen what Hermes can reach. That is also why it should not be the first thing you add.
+
+## What MCP changes
+
+Ordinary skills usually package a known capability path. MCP expands the system by connecting Hermes to external tools or services through a protocol boundary.
+
+That means MCP can unlock real leverage, but it also introduces:
+
+- more moving parts
+- more permission boundaries
+- more failure surfaces
+
+## When MCP is worth it
+
+MCP is a good fit when:
+
+- the built-in flow is already stable
+- the capability you need is genuinely external
+- the result is valuable enough to justify another integration layer
+
+It is a poor first move when you are still proving the base runtime.
+
+## Introduce it carefully
+
+A safer sequence is:
+
+1. prove the CLI loop
+2. prove the workflow without MCP
+3. add one MCP-backed capability
+4. test that capability in isolation
+5. then merge it back into the larger workflow
+
+This keeps failures attributable.
+
+## The key distinction
+
+If a workflow is already unstable, MCP will not make it clearer. It will usually make diagnosis harder.
+
+Use MCP to extend a healthy workflow, not to rescue an unhealthy one.
+
+## What to inspect first
+
+When MCP-backed behavior fails, first confirm:
+
+- Hermes itself is healthy
+- the external capability is reachable
+- the task is actually calling the intended capability
+
+Do not start by redesigning the whole workflow.
+
+## Next move
+
+If you are adding external capability and the system starts misbehaving, the next stop is [Skills are installed, but Hermes does not use them](/troubleshoot/skills-not-loading).

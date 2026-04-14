@@ -12,7 +12,7 @@ export function GET() {
   const body = [
     `# ${siteName}`,
     "",
-    "> Bilingual OpenClaw quick-start and learning hub for beginners.",
+    "> Bilingual Hermes Agent quick-start and learning hub for beginners.",
     "",
     `Site: ${siteUrl}`,
     "",
@@ -29,7 +29,7 @@ export function GET() {
     `- Troubleshoot (ZH): ${absoluteLocalizedUrl("/troubleshoot", "zh")}`,
     "",
     "## Focus",
-    "- OpenClaw quick start",
+    "- Hermes Agent quick start",
     "- Starter workflow templates",
     "- Setup strategy and workflow design",
     "- Symptom-first troubleshooting",

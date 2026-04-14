@@ -1,0 +1,64 @@
+---
+title: Hermes CLI 使用指南
+summary: 理解搭建、单次调用、诊断和日常使用最需要掌握的 `hermes` 核心命令。
+readingTime: 8 分钟
+---
+
+CLI 是理解 Hermes Agent 最短的路径。在接平台、接 gateway 或做复杂工作流之前，你应该先熟悉它的核心命令面。
+
+## 最重要的基础命令
+
+先从这个开始：
+
+```bash
+hermes
+```
+
+它会给你最直接的交互式闭环。如果 Hermes 在这里都不健康，那么在它之上搭的任何东西都不可能稳定。
+
+## 配置与模型选择
+
+首次成功基本取决于这两个命令：
+
+```bash
+hermes setup
+hermes model
+```
+
+第一次尽量先走官方路径，不要急着手改大量配置。先通过支持路径把一个 provider 跑健康，比一开始手动调很多细节更可靠。
+
+## 单次调用
+
+如果你想直接做一次窄任务，不进入长会话：
+
+```bash
+hermes -p "Summarize the key changes in this release note."
+```
+
+这个用法很适合做 provider 健康检查、prompt 试验和单步工作流验证。
+
+## 诊断命令
+
+最短诊断链路就是：
+
+```bash
+hermes doctor
+```
+
+在你重装、重写配置、怀疑系统底层之前，先跑这个。如果 CLI 健康、`hermes doctor` 也正常，下一个更值得怀疑的通常是工作流设计或 gateway 路由。
+
+## 更实用的日常顺序
+
+对多数用户来说，最好的 CLI 使用习惯是：
+
+1. `hermes setup`
+2. `hermes model`
+3. `hermes`
+4. 用 `hermes -p "..."` 做小范围验证
+5. 出问题时先跑 `hermes doctor`
+
+这个顺序能让你的反馈回路保持又短又清楚。
+
+## 下一步
+
+如果你已经能在 CLI 里稳定使用 Hermes，下一篇最值得看的是 [Hermes Gateway 指南](/learn/hermes-gateway-guide)。

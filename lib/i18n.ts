@@ -1,7 +1,7 @@
 import type { LocalizedList, LocalizedText } from "@/content/types";
 
 export const localeCookieName = "oc101-lang";
-export const localeHeaderName = "x-openclaw-locale";
+export const localeHeaderName = "x-hermes-locale";
 export const supportedLocales = ["zh", "en"] as const;
 
 export type Locale = (typeof supportedLocales)[number];

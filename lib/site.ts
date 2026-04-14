@@ -1,13 +1,13 @@
 import { localizeHref, type Locale } from "@/lib/i18n";
 
-export const siteName = "OpenClaw Playbook";
+export const siteName = "Hermes Agent Playbook";
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://openclaw101.example.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://hermes-agent-playbook.example.com";
 
 export const officialLinks = [
-  { label: "OpenClaw", href: "https://openclaw.ai" },
-  { label: "ClawHub", href: "https://clawhub.ai" },
-  { label: "GitHub", href: "https://github.com/openclaw/openclaw" },
+  { label: "Hermes Agent Docs", href: "https://hermes-agent.nousresearch.com/docs" },
+  { label: "Skills Hub", href: "https://hermes-agent.nousresearch.com/docs/skills" },
+  { label: "GitHub", href: "https://github.com/NousResearch/hermes-agent" },
 ] as const;
 
 export function absoluteUrl(path = "/") {

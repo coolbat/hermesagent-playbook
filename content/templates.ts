@@ -449,8 +449,8 @@ export const templateTabs: TemplateTab[] = [
         tags: { en: ["Multi-agent", "Feishu", "Routing"], zh: ["多 Agent", "飞书", "路由"] },
         channels: { en: ["Feishu"], zh: ["飞书"] },
         recommendedFor: {
-          en: "Teams that want different AI personalities or model choices for different Feishu bots, all managed from one OpenClaw instance.",
-          zh: "适合希望在同一个 OpenClaw 实例里管理多个飞书机器人、每个机器人有独立人设和模型的团队。",
+          en: "Teams that want different AI personalities or model choices for different Feishu bots, all managed from one Hermes Agent instance.",
+          zh: "适合希望在同一个 Hermes Agent 实例里管理多个飞书机器人、每个机器人有独立人设和模型的团队。",
         },
         cta: { label: { en: "See multi-agent guide", zh: "查看多 Agent 指南" }, href: "/learn/sub-agent-parallel-tasks", variant: "secondary" },
       },

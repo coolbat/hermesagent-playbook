@@ -4,13 +4,13 @@ summary: Learn how to dispatch parallel sub-agents, pick the right model tier fo
 readingTime: 11 min
 ---
 
-By default, OpenClaw works single-threaded: finish one thing, then start the next. For simple workflows that is fine. For anything with multiple independent steps — research several topics at once, run checks across different services, process a batch of items — single-threaded execution is the bottleneck.
+By default, Hermes Agent works single-threaded: finish one thing, then start the next. For simple workflows that is fine. For anything with multiple independent steps — research several topics at once, run checks across different services, process a batch of items — single-threaded execution is the bottleneck.
 
 Sub-agents let the main agent dispatch independent tasks to separate processes that run in parallel. Each sub-agent has its own session, executes its task, and reports back. The main agent coordinates; the sub-agents do the work.
 
 ## What sub-agents actually are
 
-A sub-agent is not a different AI. It is a separate OpenClaw session spawned by the main agent to handle a specific task. It has no access to the main session's conversation history — it only sees the task description the main agent gives it.
+A sub-agent is not a different AI. It is a separate Hermes Agent session spawned by the main agent to handle a specific task. It has no access to the main session's conversation history — it only sees the task description the main agent gives it.
 
 This isolation is both the strength and the constraint. Sub-agents can run in parallel precisely because they are independent. But they cannot share context implicitly — everything they need to know must be in the task description.
 
@@ -26,7 +26,7 @@ A practical three-tier setup:
 | Mid | `sonnet` | Writing code, scripts, structured information processing (default) |
 | Low | `haiku` | Simple file operations, format conversion, search and summarization |
 
-Configure model aliases in `openclaw.json` so you can refer to tiers by name rather than full model IDs:
+Configure model aliases in `~/.hermes/config.yaml` so you can refer to tiers by name rather than full model IDs:
 
 ```json
 {

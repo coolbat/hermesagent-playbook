@@ -17,13 +17,13 @@ export async function generateMetadata(): Promise<Metadata> {
       zh: "编辑政策",
     },
     description: {
-      en: "Editorial policy for OpenClaw Playbook, covering scope, update criteria, and quality standards.",
-      zh: "OpenClaw Playbook 的编辑政策，说明内容范围、更新条件和质量标准。",
+      en: "Editorial policy for Hermes Agent Playbook, covering scope, update criteria, and quality standards.",
+      zh: "Hermes Agent Playbook 的编辑政策，说明内容范围、更新条件和质量标准。",
     },
     path: "/editorial",
     keywords: {
-      en: ["OpenClaw Playbook editorial policy", "OpenClaw content standards"],
-      zh: ["OpenClaw Playbook 编辑政策", "OpenClaw 内容标准"],
+      en: ["Hermes Agent Playbook editorial policy", "Hermes Agent content standards"],
+      zh: ["Hermes Agent Playbook 编辑政策", "Hermes Agent 内容标准"],
     },
   });
 }
@@ -43,8 +43,8 @@ export default async function EditorialPage() {
             url: absoluteLocalizedUrl("/editorial", locale),
             description:
               locale === "zh"
-                ? "OpenClaw Playbook 的编辑标准与更新规则。"
-                : "Editorial standards and update rules for OpenClaw Playbook.",
+                ? "Hermes Agent Playbook 的编辑标准与更新规则。"
+                : "Editorial standards and update rules for Hermes Agent Playbook.",
             inLanguage: locale === "zh" ? "zh-CN" : "en",
             isPartOf: {
               "@type": "WebSite",
@@ -80,8 +80,8 @@ export default async function EditorialPage() {
           zh: "内容是如何被筛选和更新的。",
         }}
         summary={{
-          en: "OpenClaw Playbook prioritizes clear onboarding paths, practical workflow guidance, and corrections when previous guidance becomes misleading.",
-          zh: "OpenClaw Playbook 优先提供清楚的上手路径、实用的工作流指导，以及在旧内容开始误导用户时及时修正。",
+          en: "Hermes Agent Playbook prioritizes clear onboarding paths, practical workflow guidance, and corrections when previous guidance becomes misleading.",
+          zh: "Hermes Agent Playbook 优先提供清楚的上手路径、实用的工作流指导，以及在旧内容开始误导用户时及时修正。",
         }}
       />
 

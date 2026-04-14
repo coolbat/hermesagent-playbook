@@ -37,7 +37,7 @@ export default function OpenGraphImage() {
             textTransform: "uppercase",
           }}
         >
-          OpenClaw Quick Start
+          Hermes Agent Quick Start
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <div
@@ -49,7 +49,7 @@ export default function OpenGraphImage() {
               maxWidth: 900,
             }}
           >
-            OpenClaw Playbook
+            Hermes Agent Playbook
           </div>
           <div
             style={{
@@ -59,7 +59,7 @@ export default function OpenGraphImage() {
               maxWidth: 860,
             }}
           >
-            Bilingual quick start, starter workflows, and symptom-first troubleshooting for your first useful OpenClaw run.
+            Bilingual quick start, starter workflows, and symptom-first troubleshooting for your first useful Hermes Agent run.
           </div>
         </div>
         <div

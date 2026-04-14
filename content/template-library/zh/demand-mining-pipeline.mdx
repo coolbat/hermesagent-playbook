@@ -44,7 +44,7 @@ readingTime: 8 分钟
 
 **第二步：配置 cron 任务**
 
-在 `openclaw.json` 的 crons 部分加上：
+在 `~/.hermes/config.yaml` 的 crons 部分加上：
 
 ```json
 {
@@ -63,9 +63,9 @@ readingTime: 8 分钟
 **第三步：安装所需技能**
 
 ```bash
-clawhub install search-web
-clawhub install web-fetch
-clawhub install summarize
+/skills search research
+/skills search web
+/skills install <安装这条工作流需要的搜索与抓取技能>
 ```
 
 ## 好的输出是什么样的

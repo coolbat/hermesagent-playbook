@@ -114,8 +114,8 @@
 - [ ] Run `npm run build`.
 - [ ] Restart production preview with `npm run start`.
 - [ ] Manually spot-check:
-  - `/en/quick-start/what-is-openclaw`
-  - `/zh/quick-start/what-is-openclaw`
+  - `/en/quick-start/what-is-hermes`
+  - `/zh/quick-start/what-is-hermes`
   - homepage `#quick-start` card CTAs
   - sitemap and `llms.txt` output paths
 

@@ -1,0 +1,64 @@
+---
+title: Hermes CLI Guide
+summary: Understand the core `hermes` commands you need for setup, one-off prompts, diagnostics, and daily operation.
+readingTime: 8 min
+---
+
+The CLI is the shortest path to understanding Hermes Agent. Before you add a platform, a gateway, or a long workflow, you should be comfortable with the core command surface.
+
+## The command that matters most
+
+Start with the base command:
+
+```bash
+hermes
+```
+
+This gives you the simplest interactive loop. If Hermes is unhealthy here, nothing built on top of it will be reliable.
+
+## Setup and model configuration
+
+These two commands define most first-run success:
+
+```bash
+hermes setup
+hermes model
+```
+
+Use them before you start editing config by hand. For a first run, it is better to get one provider healthy through the supported path than to manually tune everything at once.
+
+## One-off prompts
+
+When you want one direct result without entering a long session:
+
+```bash
+hermes -p "Summarize the key changes in this release note."
+```
+
+This is useful for testing provider health, checking prompt framing, and validating a narrow workflow step.
+
+## Diagnostics
+
+The shortest diagnostic loop is:
+
+```bash
+hermes doctor
+```
+
+Run it before you rebuild config, reinstall dependencies, or assume the problem is deep. If the CLI is healthy and `hermes doctor` is clean, the next suspect is usually workflow design or gateway routing.
+
+## A practical operating order
+
+For most users, the best CLI habit is:
+
+1. `hermes setup`
+2. `hermes model`
+3. `hermes`
+4. `hermes -p "..."` for small validation
+5. `hermes doctor` when something feels wrong
+
+That order keeps your feedback loop short and interpretable.
+
+## Next move
+
+If you are now comfortable in the CLI, the next useful guide is [Hermes Gateway Guide](/learn/hermes-gateway-guide).

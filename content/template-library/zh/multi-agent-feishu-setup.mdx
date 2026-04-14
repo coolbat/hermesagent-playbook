@@ -12,7 +12,7 @@ readingTime: 7 分钟
 - 不同团队需要不同的 AI 人设或模型选择
 - 你想用 Claude 处理推理任务、用本地模型处理日常事务，都通过飞书访问
 
-一个 OpenClaw 实例可以管理所有这些。关键是三个核心概念：Accounts、Agents 和 Bindings。
+一个 Hermes Agent 实例可以管理所有这些。关键是三个核心概念：Accounts、Agents 和 Bindings。
 
 ## 核心架构
 
@@ -31,13 +31,13 @@ readingTime: 7 分钟
 每个 Agent 需要自己的目录，实现记忆和人设的物理隔离：
 
 ```bash
-mkdir -p ~/.openclaw/workspaces/assistant_workspace
-mkdir -p ~/.openclaw/workspaces/coder_workspace
+mkdir -p ~/.hermes/workspaces/assistant_workspace
+mkdir -p ~/.hermes/workspaces/coder_workspace
 ```
 
 给每个工作区写一份 `SOUL.md`，定义这个机器人的性格和职责。
 
-**第二步：配置 openclaw.json**
+**第二步：配置 ~/.hermes/config.yaml**
 
 ```json
 {
@@ -45,12 +45,12 @@ mkdir -p ~/.openclaw/workspaces/coder_workspace
     "list": [
       {
         "id": "agent_assistant",
-        "workspace": "~/.openclaw/workspaces/assistant_workspace",
+        "workspace": "~/.hermes/workspaces/assistant_workspace",
         "model": "your-provider/claude-sonnet-4-6"
       },
       {
         "id": "agent_coder",
-        "workspace": "~/.openclaw/workspaces/coder_workspace",
+        "workspace": "~/.hermes/workspaces/coder_workspace",
         "model": "your-provider/claude-opus-4-6"
       }
     ]
@@ -94,7 +94,7 @@ mkdir -p ~/.openclaw/workspaces/coder_workspace
 **第三步：重启并验证**
 
 ```bash
-openclaw gateway restart
+hermes gateway
 ```
 
 分别给两个机器人发私信，确认它们用各自的人设回复。

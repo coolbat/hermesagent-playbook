@@ -20,8 +20,8 @@ export type LearnTab = {
 export const learnIntro = {
   kicker: "LEARN HUB",
   title: {
-    en: "Learn is the deeper OpenClaw resource hub.",
-    zh: "Learn 是更深入的 OpenClaw 资源中心。",
+    en: "Learn is the deeper Hermes Agent resource hub.",
+    zh: "Learn 是更深入的 Hermes Agent 资源中心。",
   },
   summary: {
     en: "Use Learn as your tutorial shelf for foundations, setup strategy, workflow design, Chinese ecosystem patterns, recovery paths, and day-to-day operating tips.",
@@ -51,9 +51,9 @@ export const learnTabs: LearnTab[] = [
     },
     tutorials: [
       {
-        id: "openclaw-vs-chatbots",
-        slug: "openclaw-vs-chatbots",
-        title: { en: "OpenClaw Is Not Just Another Chatbot", zh: "OpenClaw 不只是另一个聊天机器人" },
+        id: "hermes-agent-vs-chatbots",
+        slug: "hermes-agent-vs-chatbots",
+        title: { en: "Hermes Agent Is Not Just Another Chatbot", zh: "Hermes Agent 不只是另一个聊天机器人" },
         summary: {
           en: "Understand why execution loops, channels, and repeatability matter more than prompt fluency.",
           zh: "理解为什么执行闭环、渠道触发和可重复性，比“会不会写提示词”更关键。",
@@ -63,7 +63,7 @@ export const learnTabs: LearnTab[] = [
           en: ["Mental model", "Execution", "Onboarding"],
           zh: ["认知模型", "执行闭环", "新手必读"],
         },
-        cta: { label: { en: "Read overview", zh: "查看概览" }, href: "/learn/openclaw-vs-chatbots", variant: "secondary" },
+        cta: { label: { en: "Read overview", zh: "查看概览" }, href: "/learn/hermes-agent-vs-chatbots", variant: "secondary" },
       },
       {
         id: "skills-change-boundaries",
@@ -140,6 +140,30 @@ export const learnTabs: LearnTab[] = [
         meta: { en: "Beginner · 11 min", zh: "入门 · 11 分钟" },
         tags: { en: ["Checklist", "First run", "Debugging"], zh: ["检查清单", "首次运行", "排错"] },
         cta: { label: { en: "Open guide", zh: "打开指南" }, href: "/learn/first-run-traps", variant: "secondary" },
+      },
+      {
+        id: "hermes-cli-guide",
+        slug: "hermes-cli-guide",
+        title: { en: "Hermes CLI Guide", zh: "Hermes CLI 使用指南" },
+        summary: {
+          en: "Understand the core `hermes` commands you need for setup, one-off prompts, diagnostics, and daily operation.",
+          zh: "理解搭建、单次调用、诊断和日常使用最需要掌握的 `hermes` 核心命令。",
+        },
+        meta: { en: "Beginner · 8 min", zh: "入门 · 8 分钟" },
+        tags: { en: ["CLI", "Commands", "Setup"], zh: ["CLI", "命令", "配置"] },
+        cta: { label: { en: "Open guide", zh: "打开指南" }, href: "/learn/hermes-cli-guide", variant: "secondary" },
+      },
+      {
+        id: "hermes-gateway-guide",
+        slug: "hermes-gateway-guide",
+        title: { en: "Hermes Gateway Guide", zh: "Hermes Gateway 指南" },
+        summary: {
+          en: "Learn when the gateway is required, how it fits between Hermes and messaging platforms, and what to verify first when it breaks.",
+          zh: "理解什么时候需要 gateway、它如何连接 Hermes 与消息平台，以及出问题时该先验证什么。",
+        },
+        meta: { en: "Intermediate · 9 min", zh: "进阶 · 9 分钟" },
+        tags: { en: ["Gateway", "Platforms", "Routing"], zh: ["Gateway", "平台接入", "路由"] },
+        cta: { label: { en: "Open guide", zh: "打开指南" }, href: "/learn/hermes-gateway-guide", variant: "secondary" },
       },
     ],
   },
@@ -239,10 +263,25 @@ export const learnTabs: LearnTab[] = [
     id: "advanced-config",
     label: { en: "Advanced Config", zh: "进阶配置" },
     intro: {
-      en: "Go beyond the defaults. These guides cover workspace behavior rules, memory persistence, and parallel task execution — the three levers that separate a capable setup from a basic one.",
-      zh: "超越默认配置。这三篇指南覆盖工作区行为规则、记忆持久化和并行任务执行——正是这三个关键点区分了"能用"和"真好用"。",
+      en: "Go beyond the defaults. These guides cover config structure, workspace rules, memory persistence, parallel execution, and external capability expansion.",
+      zh: "超越默认配置。这组指南覆盖配置结构、工作区规则、记忆持久化、并行执行和外部能力扩展，是从「能用」走向「真好用」的关键层。",
     },
     tutorials: [
+      {
+        id: "hermes-config-yaml",
+        slug: "hermes-config-yaml",
+        title: { en: "Understand `config.yaml` Without Guessing", zh: "不靠猜理解 `config.yaml`" },
+        summary: {
+          en: "Use the Hermes configuration file as a deliberate control surface for providers, agents, tools, and runtime behavior.",
+          zh: "把 Hermes 的配置文件当成一个明确控制 providers、agents、tools 和运行时行为的界面来理解。",
+        },
+        meta: { en: "Advanced · 10 min", zh: "高级 · 10 分钟" },
+        tags: {
+          en: ["config.yaml", "Configuration", "Runtime"],
+          zh: ["config.yaml", "配置", "运行时"],
+        },
+        cta: { label: { en: "Read guide", zh: "阅读指南" }, href: "/learn/hermes-config-yaml", variant: "secondary" },
+      },
       {
         id: "agents-md-workspace-guide",
         slug: "agents-md-workspace-guide",
@@ -287,6 +326,21 @@ export const learnTabs: LearnTab[] = [
           zh: ["子 Agent", "并行任务", "模型分级"],
         },
         cta: { label: { en: "Read guide", zh: "阅读指南" }, href: "/learn/sub-agent-parallel-tasks", variant: "secondary" },
+      },
+      {
+        id: "hermes-mcp-guide",
+        slug: "hermes-mcp-guide",
+        title: { en: "Hermes MCP Guide", zh: "Hermes MCP 接入指南" },
+        summary: {
+          en: "Understand when MCP adds real leverage, how it differs from ordinary skills, and how to introduce it without destabilizing the base workflow.",
+          zh: "理解什么时候 MCP 真正有价值、它和普通 skills 的区别，以及如何在不破坏基础工作流的前提下接入它。",
+        },
+        meta: { en: "Advanced · 9 min", zh: "高级 · 9 分钟" },
+        tags: {
+          en: ["MCP", "Integrations", "Capabilities"],
+          zh: ["MCP", "集成", "能力扩展"],
+        },
+        cta: { label: { en: "Read guide", zh: "阅读指南" }, href: "/learn/hermes-mcp-guide", variant: "secondary" },
       },
     ],
   },

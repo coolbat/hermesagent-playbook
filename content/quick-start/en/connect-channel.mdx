@@ -1,88 +1,74 @@
 ---
 title: "Connect a Chat Channel"
-summary: "Your first real milestone is a working message loop, not just a completed install."
-readingTime: "6 min"
+summary: "Move from a healthy CLI session to a callable agent loop in one messaging surface."
+readingTime: "9 min"
 ---
 
-Installation only proves the process can start. A connected channel proves the system can **receive, route, and answer**. This step matters because it is the first time OpenClaw stops being "something running in the background" and becomes something you can actually use.
+The CLI proves Hermes works. A channel proves Hermes can be called in the way real users will actually use it.
 
-## What success looks like
+## Start with one platform
 
-You send one test message through a real channel and get one real response back.
-
-That sounds small, but it removes a huge amount of uncertainty:
-
-- the bot is reachable
-- the channel binding works
-- the message path is valid
-- basic runtime behavior is visible
-
-If you can send one message and get one reply back, you have already crossed one of the most important Quick Start milestones.
-
-## Keep the first channel simple
-
-Use the channel that is easiest for you to inspect and retry, such as:
+The safest first choice is a single platform you can test quickly:
 
 - Telegram
-- Feishu
-- another already-supported chat entry point
+- Discord
+- another officially supported messaging surface
 
-The standard is not "which channel is most powerful." It is "which channel makes input, output, and errors easiest to observe." For the first connection, avoid the most complex option with the heaviest enterprise permissions or the hardest login story.
+Do not connect several at once. If responses fail, you want one clear event path to debug.
 
-## Recommended connection order
+## The rule: text before voice, one loop before many loops
 
-Break this step down aggressively:
+The official docs repeatedly encourage a simple order of operations:
 
-1. Pick the chat channel you know best.
-2. Configure only one account.
-3. As soon as the binding is done, send the shortest possible test message.
-4. Check whether the reply comes back, then check whether logs exist.
-5. Only after that should you think about group permissions, multi-account setups, or more channels.
+1. confirm Hermes works in text
+2. connect one platform
+3. verify one request-response loop
+4. only then add voice, automations, or more channels
 
-Keep the first test message simple too. Do not start with web search, file access, or skill execution. First confirm that ordinary message-in, message-out works.
+That order keeps failures local.
 
-## What that one test message is actually verifying
+## What a good channel test looks like
 
-This step is not only about proving "the bot can reply." It verifies an entire chain:
+A good first test is deliberately boring:
 
-- the channel-side configuration is correct
-- OpenClaw receives the incoming event
-- the linked account or bot token is valid
-- the message is routed into the correct session
-- model invocation does not fail on the shortest path
-- the result can be sent back into the channel
+- one known account
+- one clean text message
+- one expected reply
 
-That is why you want to do this as early as possible. It collapses a lot of uncertainty very quickly.
+You are not testing intelligence yet. You are testing whether the message reaches Hermes, Hermes processes it, and a response comes back cleanly.
 
-## If the bot stays silent, check these categories first
+## If you are using gateway-backed platforms
 
-Most "channel issues" are not exotic. They usually fall into one of these buckets:
+Once your platform is configured, start the gateway:
 
-- the account or token is wrong
-- callbacks, event subscriptions, or permissions are missing
-- the bot is present in the channel but lacks send/receive rights
-- the OpenClaw process is not actually healthy
-- the model call failed, making it look like the message never arrived
+```bash
+hermes gateway
+```
 
-The fastest path is to narrow the problem to one of two states: "the message never arrived" or "the message arrived but nothing got sent back."
+For gateway-based setups, this process matters as much as the provider does. A healthy CLI loop with an unhealthy gateway is still a broken user experience.
 
-## Common beginner mistake
+## If the bot stays silent
 
-When the bot stays silent, many users start adding skills, rewriting prompts, or even switching models. That usually makes the signal worse. Until the message loop is working, feature expansion has almost no value.
+Check these in order:
 
-Another common mistake is treating a "connected" badge in some admin screen as success. Real success has only one definition: **you send a message in a real chat interface, and the bot actually replies**.
+1. Does the platform configuration look correct?
+2. Is the gateway running?
+3. Does Hermes still respond in the CLI?
+4. Are logs showing incoming events?
 
-## What you should have before moving on
+If the answer to step 3 is no, go back to setup. If step 3 is yes and step 4 is no, the problem is usually routing, auth, or webhook wiring.
 
-Before continuing, you should ideally have all of these:
+## Keep the first channel narrow
 
-- one primary channel chosen as the first entry point
-- one successful real message round-trip
-- a clear idea of whether channel failures should be checked as account, permissions, or log issues
-- no self-inflicted complexity from multi-channel or multi-account sprawl
+Do not mix these during first validation:
 
-At that point, OpenClaw has stopped being "installed on your machine" and started being callable.
+- attachments
+- rich formatting
+- voice messages
+- tool-heavy prompts
 
-## A better next move
+Simple text is easier to observe and easier to recover.
 
-If the channel works, move to **one starter workflow**. If it does not, treat it as a channel problem first, not a workflow problem. Do not optimize workflow design before message delivery is proven.
+## Next move
+
+With one healthy channel loop in place, continue to [Run a Starter Workflow](/quick-start/starter-workflow).

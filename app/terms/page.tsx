@@ -17,13 +17,13 @@ export async function generateMetadata(): Promise<Metadata> {
       zh: "使用条款",
     },
     description: {
-      en: "Terms of use for OpenClaw Playbook, including content scope, no-warranty language, and acceptable use expectations.",
-      zh: "OpenClaw Playbook 的使用条款，说明内容边界、免责声明和基本使用预期。",
+      en: "Terms of use for Hermes Agent Playbook, including content scope, no-warranty language, and acceptable use expectations.",
+      zh: "Hermes Agent Playbook 的使用条款，说明内容边界、免责声明和基本使用预期。",
     },
     path: "/terms",
     keywords: {
-      en: ["OpenClaw Playbook terms", "site terms of use"],
-      zh: ["OpenClaw Playbook 条款", "站点使用条款"],
+      en: ["Hermes Agent Playbook terms", "site terms of use"],
+      zh: ["Hermes Agent Playbook 条款", "站点使用条款"],
     },
   });
 }
@@ -43,8 +43,8 @@ export default async function TermsPage() {
             url: absoluteLocalizedUrl("/terms", locale),
             description:
               locale === "zh"
-                ? "OpenClaw Playbook 的使用条款。"
-                : "Terms of use for OpenClaw Playbook.",
+                ? "Hermes Agent Playbook 的使用条款。"
+                : "Terms of use for Hermes Agent Playbook.",
             inLanguage: locale === "zh" ? "zh-CN" : "en",
             isPartOf: {
               "@type": "WebSite",
@@ -80,8 +80,8 @@ export default async function TermsPage() {
           zh: "使用这个站点的基本规则。",
         }}
         summary={{
-          en: "OpenClaw Playbook is an informational site. It is meant to support learning and onboarding, not to replace official documentation or professional advice.",
-          zh: "OpenClaw Playbook 是一个信息型站点，主要用于辅助学习和 onboarding，不替代官方文档或专业意见。",
+          en: "Hermes Agent Playbook is an informational site. It is meant to support learning and onboarding, not to replace official documentation or professional advice.",
+          zh: "Hermes Agent Playbook 是一个信息型站点，主要用于辅助学习和 onboarding，不替代官方文档或专业意见。",
         }}
       />
 
